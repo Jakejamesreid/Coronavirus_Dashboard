@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test</title>
+    <script type="text/javascript" src="src/js/apitest.js"></script>
+</head>
+
+<body>
+    <button onclick="writeToDocument(`https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=Date,ConfirmedCovidCases&returnGeometry=false&orderByFields=date desc&outSR=4326&f=json`)">Submit</button>
+    <div id="result"></div>
+</body>
+
+</html>
