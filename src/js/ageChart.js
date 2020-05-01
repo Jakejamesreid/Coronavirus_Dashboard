@@ -1,5 +1,5 @@
 // https://www.chartjs.org/docs/latest/
-const ctx = document.getElementById('myChart').getContext('2d');
+const ctx = document.getElementById('ageChart').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -42,4 +42,27 @@ const myChart = new Chart(ctx, {
             }]
         }
     }
+});
+
+// Pie chart	
+var ctx2 = document.getElementById("genderChart");
+var lineChart = new Chart(ctx2, {
+    type: 'pie',
+    data: {
+        labels: ["Male", "Female", "Other"],
+        datasets: [{
+            label: "Gender",
+            data: [31, 74, 6],
+            backgroundColor: [ 
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)'
+            ]
+        }]
+    },
 });
