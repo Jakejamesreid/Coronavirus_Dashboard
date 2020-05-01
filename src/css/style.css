@@ -183,3 +183,27 @@ a.article:hover {
         display: none;
     }
 }
+
+
+/* ---------------------------------------------------
+    Custom CSS
+----------------------------------------------------- */
+.headingText{
+    text-align: center;
+    margin-bottom: 30px;
+}
+/* Removing negative margin from rows */
+.row{
+    margin: 0;
+}
+
+/* Fitting homepage image to column */
+.img-right {
+    max-width:100%;
+    max-height:100%;
+}
+
+/* Setting column size to 50% */
+.column {
+    width: 50%;
+}
