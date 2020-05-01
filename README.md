@@ -1,11 +1,14 @@
-# Your Project's Name
+# Coronavirus Dashboard Ireland
 
-One or two paragraphs providing an overview of your project.
-
-Essentially, this part is your sales pitch.
+This project was developed to display the Coronavirus statistics for Ireland in an easy to use dashboard. 
+Statistics can be analysed through graphs and an interactive map.
+The user can also sign up to receive daily updates by email
  
 ## UX
- 
+
+The design of this site is pretty simple. There is a navigation menu on the left hand side to go between the different pages of the website.
+In the dashboard there is a tabbed menu to swap between the graphs and the interactive map of Ireland
+
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
@@ -77,5 +80,5 @@ In addition, if it is not obvious, you should also describe how to run your code
 - The photos used in this site were obtained from ...
 
 ### Acknowledgements
-
+I received inspiration for the design of the website from http://127.0.0.1:5500/Javascript/Milestone%20Project/index.html
 - I received inspiration for this project from X
