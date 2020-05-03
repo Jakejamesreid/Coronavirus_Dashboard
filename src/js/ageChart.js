@@ -64,5 +64,5 @@ var lineChart = new Chart(ctx2, {
                 'rgba(255, 206, 86, 1)'
             ]
         }]
-    },
+    }
 });
