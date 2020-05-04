@@ -24,10 +24,6 @@ a:focus {
     transition: all 0.3s;
 }
 
-a:focus {
-    color: black;
-
-}
 
 .navbar {
     padding: 15px 10px;
@@ -35,7 +31,7 @@ a:focus {
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.);
 }
 
 .navbar-btn {
@@ -67,9 +63,31 @@ a:focus {
     left: 0;
     height: 100vh;
     z-index: 999;
-    background: #7386D5;
+    background: #212121;
     color: #fff;
     transition: all 0.3s;
+    background-image: url("../../assets/virus.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#sidebar:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: #212121;
+    background: -moz-linear-gradient(45deg, #212121 0%, #32373d 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, #212121), color-stop(100%, #32373d));
+    background: -webkit-linear-gradient(45deg, #212121 0%, #32373d 100%);
+    background: -o-linear-gradient(45deg, #212121 0%, #32373d 100%);
+    background: -ms-linear-gradient(45deg, #212121 0%, #32373d 100%);
+    background: linear-gradient(45deg, #212121 0%, #32373d 100%);
+    opacity: .8;
+    z-index: -1;
 }
 
 #sidebar.active {
@@ -77,13 +95,12 @@ a:focus {
 }
 
 #sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
+    padding: 40px 0 20px 10px;
+    border-bottom: 1px solid #999;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul p {
@@ -98,14 +115,14 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
+    color: #212121;
     background: #fff;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: #32373d;
 }
 
 a[data-toggle="collapse"] {
@@ -123,7 +140,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #32373d;
 }
 
 ul.CTAs {
@@ -138,14 +155,9 @@ ul.CTAs a {
     margin-bottom: 5px;
 }
 
-a.download {
-    background: #fff;
-    color: #7386D5;
-}
-
 a.article,
 a.article:hover {
-    background: #6d7fcc !important;
+    background: #32373d !important;
     color: #fff !important;
 }
 

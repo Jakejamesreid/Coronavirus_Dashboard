@@ -41,9 +41,10 @@ For the Heading font I chose Helvetica as this font pairs well with Segoe UI
 Since this is a dasboard I kept the colours simple so that the data would be easy to read
 
 * Background: #f5f6fa
-* Side Bar Background: #353a40
+* Side Bar Background: #212121
+* Side Bar Active List Element: #32373d
 * Chart Boxes: #FFF
-* Highlight Colour: #19a1b7
+* Highlight Colour: #fff
 
 ### Wireframe Mockups
 
@@ -215,6 +216,7 @@ The dashboard features maps and charts based on [Irelands open data portal](http
 ### Media
 - The photos used in this site were obtained from ...
 [Favicon](https://www.iconfinder.com/iconsets/coronavirus-12?utm_campaign=Virus%20awareness&utm_medium=landing%20page&utm_source=Webflow&utm_content=Coronavirus%20by%20dDara)
+[Sidebar Image](https://www.twenty20.com/photos/78c63d85-e3c5-419b-87b4-bc137da4bd85)
 
 ### Acknowledgements
 I received inspiration for the design of the website from:
