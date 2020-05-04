@@ -33,7 +33,8 @@ In the dashboard there is a tabbed menu to swap between the graphs and the inter
 ### Design Choices
 
 #### Fonts
-For the body font I chose a sans-serif font called Segoe UI as this font is very readible at small sizes. This is important when displaying lots of data.
+For the statistics font I chose a sans-serif font called Segoe UI as this font is very readible at small sizes. This is important when displaying lots of data.
+For the body font I chose a sans-serif font called Poppins as this is a good font for websites with easy readability at diferent sizes.
 For the Heading font I chose Helvetica as this font pairs well with Segoe UI  
 
 #### Colours
@@ -151,6 +152,9 @@ In this section, you should mention all of the languages, frameworks, libraries,
 ---
 
 ## Testing
+
+Ensured correct styles were applied when hovering over elements
+
 
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
