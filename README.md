@@ -119,15 +119,15 @@ Another useful feature could be latest news updates from the Irish government, W
 
 ## Project Planning
 
-Stage 1 - Implement the genral layout of the dashboard.
+**Stage 1** - Implement the genral layout of the dashboard.
 
-Stage 2 - Create bar and pie charts using the chart.js library to display sample data. This data will later be replaced with the latest coronavirus figures.
+**Stage 2** - Create bar and pie charts using the chart.js library to display sample data. This data will later be replaced with the latest coronavirus figures.
 
-Stage 3 - Create an interactive SVG map of Ireland, which when a county is hovered over will display sample data. This data will later be replaced with the latest coronavirus figures.
+**Stage 3** - Create an interactive SVG map of Ireland, which when a county is hovered over will display sample data. This data will later be replaced with the latest coronavirus figures.
 
-Stage 4 - Use the API from data.gov to populate the charts and SVG map
+**Stage 4** - Use the API from data.gov to populate the charts and SVG map
 
-Stage 5 - Test robustness of the site and optimize performance and code
+**Stage 5** - Test robustness of the site and optimize performance and code
 
 ## Technologies Used
 
@@ -172,16 +172,34 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ---
 
+## Building for source
+For production release:
+```sh
+$ gulp build --prod
+```
+Generating pre-built zip archives for distribution:
+```sh
+$ gulp build dist --prod
+```
+---
+
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+Steps for GitHub Pages deployment: 
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+1. Go to the **Settings** for the project.
+2. Scroll down until you see the **GitHub Pages** section.
+3. Under the **Source** heading, click the drop-down menu and select **Master Branch**
+4. Scroll back down to the **GitHub Pages** section and copy the depoyment link to the description of the repository.
+ 
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+### How to run this project locally
+
+To clone this project from GitHub:
+
+1. Copy the clone URL for the repository by using the "Clone or download" button at the top right of the repo. 
+2. In a command line, navigate to the directiory you want to clone the repo to and type the following command:
+    ```git clone https://github.com/D0nni387/The-Quiz-Hub.git```
 
 ---
 
@@ -192,6 +210,7 @@ The dashboard features maps and charts based on [Irelands open data portal](http
 
 ### Media
 - The photos used in this site were obtained from ...
+[Favicon](https://www.iconfinder.com/iconsets/coronavirus-12?utm_campaign=Virus%20awareness&utm_medium=landing%20page&utm_source=Webflow&utm_content=Coronavirus%20by%20dDara)
 
 ### Acknowledgements
 I received inspiration for the design of the website from:
