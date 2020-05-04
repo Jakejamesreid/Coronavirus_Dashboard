@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/png">
-    <title>Coronavirus Dashboard</title>
-
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="A dashboard for the latest Coronavirus statistics in Ireland"/>
+        <link rel="shortcut icon" href="assets/favicon.ico" type="image/png">
+        <title>Coronavirus Dashboard</title>
+        
+        
     <!-- Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="src/css/style.css">
+
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
     <!-- Font Awesome JS -->
@@ -29,12 +33,14 @@
 <body>
 
     <div class="wrapper">
+
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3>Coronavirus Dashboard</h3>
             </div>
 
+            <!-- Menu Items  -->
             <ul class="list-unstyled components">
                 <p>Menu</p>
                 <li>
@@ -56,16 +62,16 @@
                     <a href="#">Contact</a>
                 </li>
             </ul>
-
-
         </nav>
 
-        <!-- Page Content  -->
+        <!-- Main Content Area -->
         <div id="content">
 
+            <!-- NavBar -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
 
+                    <!-- NavBar Menu Items -->
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav">
                             <li class="nav-item active">
@@ -76,12 +82,12 @@
                             </li>
                         </ul>
                     </div>
-
+                    
+                    <!-- Sidebar Toggle Button -->
                     <button type="button" id="sidebarCollapse" class="btn btn-dark text-right">
                         <i class="fas fa-bars"></i>
                         <span>Toggle Sidebar</span>
                     </button>
-
 
                 </div>
             </nav>
@@ -92,7 +98,10 @@
 
             <h2 class="headingText">Dashboard</h2>
 
+            <!-- Charts -->
             <div class="row">
+
+                <!-- Age Chart -->
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
@@ -105,6 +114,7 @@
                     </div>
                 </div>
 
+                <!-- Gender Chart -->
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="x_panel">
                         <div class="x_title">
@@ -117,13 +127,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
+            <!-- /Charts -->
         </div>
-
+        <!-- /Main Content Area -->
     </div>
+    <!-- /Wrapper -->
 
-    <script type="text/javascript" src="src/js/ageChart.js"></script>
-
+    <!-- Script for charts -->
+    <script type="text/javascript" src="src/js/Charts.js"></script>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
