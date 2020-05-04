@@ -49,8 +49,7 @@ a:focus {
 
 /* ---------------------------------------------------
     SIDEBAR STYLE
------------------------------------------------------ */
-
+----------------------------------------------------- */  
 .wrapper {
     display: flex;
     width: 100%;
@@ -194,10 +193,13 @@ a.article:hover {
         width: 100%;
     }
     #content.active {
-        width: calc(100% - 250px);
+        width: 100%;
     }
     #sidebarCollapse span {
         display: none;
+    }
+    #sidebarCollapse{
+        margin-left:auto
     }
 }
 
