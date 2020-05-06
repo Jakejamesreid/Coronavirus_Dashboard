@@ -156,6 +156,8 @@ In this section, you should mention all of the languages, frameworks, libraries,
 
 Ensured correct styles were applied when hovering over elements
 
+Ensured that correct figures were displayed when pulling in the data for the Coronavirus figures
+
 
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
@@ -223,4 +225,4 @@ I received inspiration for the design of the website from:
 https://bootstrapious.com/p/bootstrap-sidebar
 https://www.youtube.com/watch?v=dMNBuLcbOPY
 
-- I received inspiration for this project from X
+[Used for understanding async functions](https://dev.to/johnpaulada/synchronous-fetch-with-asyncawait)
