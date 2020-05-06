@@ -2,6 +2,10 @@ async function getData(URL) {
     const response = await fetch(URL)
     const json = await response.json()
 
+    // Get the last date the dataset was updated
+    infoUpdated = new Date(json.features[0].attributes['Date']);
+    document.getElementById("infoUpdated").innerHTML = "<strong>Last Updated:</strong>" + infoUpdated.toDateString();
+
     // Get daily figures for Coronavirus in Ireland
     dailyCases = json.features[0].attributes['ConfirmedCovidCases'];
     dailyDeaths = json.features[0].attributes['ConfirmedCovidDeaths'];
