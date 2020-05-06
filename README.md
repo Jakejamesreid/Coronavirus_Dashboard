@@ -226,3 +226,4 @@ https://bootstrapious.com/p/bootstrap-sidebar
 https://www.youtube.com/watch?v=dMNBuLcbOPY
 
 [Used for understanding async functions](https://dev.to/johnpaulada/synchronous-fetch-with-asyncawait)
+[Get key for specific value](https://stackoverflow.com/questions/9907419/how-to-get-a-key-in-a-javascript-object-by-its-value)
