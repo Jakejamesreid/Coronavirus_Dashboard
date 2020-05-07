@@ -5,20 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="A dashboard for the latest Coronavirus statistics in Ireland"/>
+    <meta name="description" content="A dashboard for the latest Coronavirus statistics in Ireland" />
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/png">
     <title>Coronavirus Dashboard</title>
 
     <!-- Bootstrap -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">    
-    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="src/css/style.css">
 
 
     <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
 
 </head>
 
@@ -39,7 +44,8 @@
                     <a href="index.html">Home</a>
                 </li>
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Dashboard</a>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle">Dashboard</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
                             <a href="dashboard_graphs.html">Graphs</a>
@@ -75,39 +81,67 @@
 
             <div class="line"></div>
 
-            <h2 class="headingText">About</h2>
-            <p>This project was developed to display the Coronavirus statistics for Ireland in an easy to use dashboard. 
-                Statistics can be analysed through graphs and an interactive map.
-                The user can also sign up to receive daily updates by email.</p>
+            <!-- About Section -->
+            <section>
+                <h2 class="headingText">About</h2>
+                <p>This project was developed to display the Coronavirus statistics for Ireland in an easy to use dashboard.
+                    Statistics can be analysed through graphs and an interactive map of Ireland.
+                    Feel free to sign up to the daily newsletter to receive updates by email.</p>
 
+                <form id="newsletter" class="input-group">
+                    <input type="text" class="form-control" placeholder="Your email" aria-label="Your email">
+                    <div class="input-group-append">
+                        <button class="btn my-0 btn-dark" type="button">Sign Up</button>
+                    </div>
+                </form>
+
+            </section>
             <div class="line"></div>
 
-            <h2 class="headingText">Dashboard</h2>
-
+            
             <!-- Dashboard Section -->
-            <div class="row">
-                <div class="column">
-                    <div class="pr-3">
-                        <p>To start getting up to date statistics about the Coronavirus, please click the button below.</p>
-                        <button class="btn btn-dark">Click Here!</button>
+            <section>
+                <div class="row">
+                    <div class="column">
+                        <h2 class="headingText">Graphs</h2>
+                        <div class="pr-3">
+                            <p>To get up to date info on the Coronavirus figures for Ireland with details on the latest confirmed cases, deaths and recoveried for each day and since the virus arrived in Ireland.
+                                There is also confirmed cases breakdown by age, gender, transmission and hospitalisation.
+                            </p>
+                            <button class="btn btn-dark">Click Here!</button>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h2 class="headingText">Interactive Map</h2>
+                        <div class="pl-3">
+                            <p>Use the button below to see the breakbown for each county of Ireland. Hover over a county to see the confirmed cases, deaths and recoveries for that county.
+                            </p>
+                            <button class="btn btn-dark">Click Here!</button>
+                        </div>
                     </div>
                 </div>
-                <div class="column">
-                    <img class="img-right" src="assets/Dashboard.png"/>
-                </div>
-            </div>
-
+            </section>
         </div>
+
+        <!-- /Main Content Area -->
     </div>
+    <!-- /Wrapper -->
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
     <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
     <!-- jQuery Custom Scroller CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Custom JS for sidebar -->
     <script src="src/js/sidebar.js"></script>
 </body>

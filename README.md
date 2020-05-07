@@ -222,8 +222,9 @@ The dashboard features maps and charts based on [Irelands open data portal](http
 
 ### Acknowledgements
 I received inspiration for the design of the website from:
-https://bootstrapious.com/p/bootstrap-sidebar
-https://www.youtube.com/watch?v=dMNBuLcbOPY
+[General layout](https://bootstrapious.com/p/bootstrap-sidebar)
+[Layout elements](https://www.youtube.com/watch?v=dMNBuLcbOPY)
+[News Letter Sign Up](https://mdbootstrap.com/docs/jquery/navigation/footer/)
 
 [Used for understanding async functions](https://dev.to/johnpaulada/synchronous-fetch-with-asyncawait)
 [Get key for specific value](https://stackoverflow.com/questions/9907419/how-to-get-a-key-in-a-javascript-object-by-its-value)
