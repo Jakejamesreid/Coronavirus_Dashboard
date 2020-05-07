@@ -3,6 +3,11 @@ async function getData(URL){
     const json = await response.json()
     countyData = json.features;
 
+    // Get the last date the dataset was updated
+    infoUpdated = new Date(json.features[0].attributes['TimeStamp']);
+    document.getElementById("infoUpdated").innerHTML = "<strong>Last Updated:</strong>" + infoUpdated.toDateString();
+
+    // Swap key value pairs
     Object.prototype.getKey = function(value){
         for(var key in this){
           if(this[key] == value){
@@ -87,6 +92,6 @@ async function getData(URL){
     });
 }
 
-const URL = `https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/Covid19CountyStatisticsHPSCIreland/FeatureServer/0/query?where=1%3D1&outFields=CountyName,ConfirmedCovidCases,ConfirmedCovidDeaths,ConfirmedCovidRecovered,ORIGID&returnGeometry=false&orderByFields=TimeStamp desc&outSR=4326&f=json`
+const URL = `https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/Covid19CountyStatisticsHPSCIreland/FeatureServer/0/query?where=1%3D1&outFields=CountyName,ConfirmedCovidCases,ConfirmedCovidDeaths,ConfirmedCovidRecovered,ORIGID,TimeStamp&returnGeometry=false&orderByFields=TimeStamp desc&outSR=4326&f=json`
 //const URL = `https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/Covid19CountyStatisticsHPSCIreland/FeatureServer/0/query?where=TimeStamp%20%3E%3D%20TIMESTAMP%20'2020-05-04%2000%3A00%3A00'%20AND%20TimeStamp%20%3C%3D%20TIMESTAMP%20'2020-05-06%2000%3A00%3A00'&outFields=CountyName,TimeStamp,ConfirmedCovidCases,ConfirmedCovidDeaths,ConfirmedCovidRecovered&returnGeometry=false&orderByFields=TimeStamp desc&outSR=4326&f=json`
 getData(URL)
