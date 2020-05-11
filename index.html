@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="A dashboard for the latest Coronavirus statistics in Ireland" />
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/png">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
     <title>Coronavirus Dashboard</title>
 
     <!-- Bootstrap -->
@@ -14,8 +14,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="src/css/style.css">
-
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -55,9 +54,6 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
             </ul>
         </nav>
 
@@ -71,7 +67,6 @@
                     <!-- Sidebar Toggle Button -->
                     <button type="button" id="sidebarCollapse" class="btn btn-dark text-right">
                         <i class="fas fa-bars"></i>
-                        <span>Toggle Sidebar</span>
                     </button>
 
                 </div>
@@ -88,35 +83,40 @@
                     Statistics can be analysed through graphs and an interactive map of Ireland.
                     Feel free to sign up to the daily newsletter to receive updates by email.</p>
 
-                <form id="newsletter" class="input-group">
-                    <input type="text" class="form-control" placeholder="Your email" aria-label="Your email">
+                <form id="newsletter" class="input-group" method="POST">
+                    <input type="email" class="form-control" placeholder="Your email" aria-label="Your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                     <div class="input-group-append">
-                        <button class="btn my-0 btn-dark" type="button">Sign Up</button>
+                        <button id="cta" class="btn my-0 btn-dark" type="submit" onclick="showHideSuccess()">Submit</button>
                     </div>
                 </form>
+                <p id="error">Please enter a valid email</p>
+                <p id="success">You have successfully subscribed</p>
 
             </section>
             <div class="line"></div>
-
             
             <!-- Dashboard Section -->
             <section>
                 <div class="row">
-                    <div class="column">
+                    <div id="dashboardSctn" class="column">
                         <h2 class="headingText">Graphs</h2>
                         <div class="pr-3">
                             <p>To get up to date info on the Coronavirus figures for Ireland with details on the latest confirmed cases, deaths and recoveried for each day and since the virus arrived in Ireland.
                                 There is also confirmed cases breakdown by age, gender, transmission and hospitalisation.
                             </p>
-                            <button class="btn btn-dark">Click Here!</button>
+                            <a href='dashboard_graphs.html'>
+                                <button id="dashboardBtn" class="btn btn-dark">Click Here!</button>
+                            </a>
                         </div>
                     </div>
-                    <div class="column">
+                    <div id="dashboardSctn" class="column">
                         <h2 class="headingText">Interactive Map</h2>
-                        <div class="pl-3">
+                        <div class="pl-md-3">
                             <p>Use the button below to see the breakbown for each county of Ireland. Hover over a county to see the confirmed cases, deaths and recoveries for that county.
                             </p>
-                            <button class="btn btn-dark">Click Here!</button>
+                            <a href='interactive_map.html'>
+                                <button id="dashboardBtn" class="btn btn-dark">Click Here!</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -143,7 +143,28 @@
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Custom JS for sidebar -->
-    <script src="src/js/sidebar.js"></script>
+    <script src="assets/js/sidebar.js"></script>
+    <script>
+            console.log("hello");
+            function showHideSuccess() {
+                var success = document.getElementById("success");
+                if (success.style.display === "none") {
+                    success.style.display = "block";
+                } else {
+                    success.style.display = "none";
+                }
+            }
+            function showHideError() {
+                var error = document.getElementById("error");
+                if (error.style.display === "none") {
+                    error.style.display = "block";
+                } else {
+                    error.style.display = "none";
+                }
+
+            }
+
+    </script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 
 ---
 
-## Contents:
+## Table of Contents:
 
 * [UX](#ux-user-experience)
     * [Design Choices](#design-choices)
@@ -237,3 +237,4 @@ I received inspiration for the design of the website from:
 
 [Used for understanding async functions](https://dev.to/johnpaulada/synchronous-fetch-with-asyncawait)
 [Get key for specific value](https://stackoverflow.com/questions/9907419/how-to-get-a-key-in-a-javascript-object-by-its-value)
+[Toggle form success and error messages](https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp)
