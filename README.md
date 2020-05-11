@@ -4,24 +4,27 @@
 
 ## Contents:
 
-* UX
-    * Design Choices
-        * Fonts
-        * Colours       
-    * Wireframes
-* Goals
-    * Project Goals
-    * User Goals
-* User Stories
-* Features
-* Future Goals
-* Project Planning
-* Technology Used
-* Testing
-    * Issues and Resolutions
-* Deployment
-* Credits
-* Acknowledgements
+* [UX](#ux-user-experience)
+    * [Design Choices](#design-choices)
+        * [Fonts](#fonts)
+        * [Colours](#colours)
+    * [Wireframes](#wireframe-mockups)
+        * [Homepage](#homepage)
+        * [Graphs](#graphs)
+        * [Interactive SVG](#interactive-svg)
+* [Goals](#goals)
+    * [Project Goals](#project-goals)
+    * [User Goals](#user-goals)
+* [User Stories](#user-stories)
+* [Features](#features)
+* [Future Goals](#future-goals)
+* [Project Planning](#project-planning)
+* [Technology Used](#technologies-used)
+* [Testing](#testing)
+* [Building for Source](#building-for-source)
+    * [How to Run Project Locally](#how-to-run-project-locally)
+* [Deployment](#deployment)
+* [Credits](#credits)
 
 ---
 
@@ -82,6 +85,7 @@ The user needs to be able to easily view the latest figures for the Coronavirus
 
 ---
 
+
 ## User stories
 
 1. As a user I want to be able to see the latest Coronavirus figures for Ireland.
@@ -91,6 +95,7 @@ The user needs to be able to easily view the latest figures for the Coronavirus
 5. As a user I want to be kept up to date with the latest daily figures.
 
 ---
+
 
 ## Features
 
@@ -108,6 +113,7 @@ The user has the ability to subscribe for daily email updates to see the total n
 
 ---
 
+
 ## Future Goals
 There are many useful updates that could be implemented in this project in the future. 
 
@@ -118,6 +124,7 @@ This project could be expanded to provide worldwide statistics and a worldwide I
 Another useful feature could be latest news updates from the Irish government, WHO and CDC.
 
 ---
+
 
 ## Project Planning
 
@@ -148,16 +155,14 @@ Another useful feature could be latest news updates from the Irish government, W
 * [Font Awesome](https://fontawesome.com/) - Used for Icons
 * [svgMap](https://github.com/StephanWagner/svgMap) - GitHub World Map project, modified to work for Ireland
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
-
 ---
+
 
 ## Testing
 
 Ensured correct styles were applied when hovering over elements
 
 Ensured that correct figures were displayed when pulling in the data for the Coronavirus figures
-
 
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
@@ -179,7 +184,8 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ---
 
-## Building for source
+
+## Building for Source
 For production release:
 ```sh
 $ gulp build --prod
@@ -188,7 +194,18 @@ Generating pre-built zip archives for distribution:
 ```sh
 $ gulp build dist --prod
 ```
+
+### How to Run Project Locally
+
+To run this project in a local environment, you first need to clone this project from GitHub:
+
+1. Copy the clone URL for the repository by using the "Clone or download" button at the top right of the repo. 
+2. In a command line, navigate to the directiory you want to clone the repo to and type the following command:
+    ```git clone https://github.com/Jakejamesreid/Coronavirus_Dashboard.git```
+3. To run the project I use a VS Code addon called "Live Server". This allows you to launch a development local Server with a live reload feature for static & dynamic pages.
+
 ---
+
 
 ## Deployment
 
@@ -199,16 +216,8 @@ Steps for GitHub Pages deployment:
 3. Under the **Source** heading, click the drop-down menu and select **Master Branch**
 4. Scroll back down to the **GitHub Pages** section and copy the depoyment link to the description of the repository.
  
-
-### How to run this project locally
-
-To clone this project from GitHub:
-
-1. Copy the clone URL for the repository by using the "Clone or download" button at the top right of the repo. 
-2. In a command line, navigate to the directiory you want to clone the repo to and type the following command:
-    ```git clone https://github.com/D0nni387/The-Quiz-Hub.git```
-
 ---
+
 
 ## Credits
 
