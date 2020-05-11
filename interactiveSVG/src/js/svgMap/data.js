@@ -13,8 +13,6 @@ svgMap.prototype.applyData = function (data) {
     value < min && (min = value);
   });
 
-
-
   // Loop through counties and set colors
   Object.keys(this.counties).forEach(function (countyID) {
     var element = document.getElementById(this.id + '-map-county-' + countyID);

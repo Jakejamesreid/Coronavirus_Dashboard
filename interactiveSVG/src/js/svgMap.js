@@ -30,15 +30,6 @@ svgMap.prototype.init = function (options) {
     colorMin: '#FFE5D9',
     colorNoData: '#E2E2E2',
 
-    // The flag type can be 'image' or 'emoji'
-    flagType: 'image',
-
-    // The URL to the flags when using flag type 'image', {0} will get replaced with the lowercase county id
-    flagURL: 'https://cdn.jsdelivr.net/gh/hjnilsson/county-flags@latest/svg/{0}.svg',
-
-    // Decide whether to show the flag option or not
-    hideFlag: true,
-
     // The default text to be shown when no data is present
     noDataText: 'No data available',
 

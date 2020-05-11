@@ -235,6 +235,11 @@ I received inspiration for the design of the website from:
 [Layout elements](https://www.youtube.com/watch?v=dMNBuLcbOPY)
 [News Letter Sign Up](https://mdbootstrap.com/docs/jquery/navigation/footer/)
 
+I used the following websites for reseach:
 [Used for understanding async functions](https://dev.to/johnpaulada/synchronous-fetch-with-asyncawait)
 [Get key for specific value](https://stackoverflow.com/questions/9907419/how-to-get-a-key-in-a-javascript-object-by-its-value)
 [Toggle form success and error messages](https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp)
+
+### Attribution
+This project makes use of the [svgMap](https://github.com/StephanWagner/svgMap) project created by [Stephan Wagner](https://github.com/StephanWagner) which creates an SVG map to display the GDP values for each country. I modified this project to display the coronavirus statistics for each county in Ireland.
+svgMap uses [svg-pan-zoom](https://github.com/ariutta/svg-pan-zoom) by [Anders Riutta.](https://github.com/ariutta)
