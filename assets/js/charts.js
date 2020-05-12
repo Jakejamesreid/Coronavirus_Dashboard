@@ -1,46 +1,49 @@
-async function getData(URL) {
-    const response = await fetch(URL)
-    const json = await response.json()
+// Make API call
+async function getData(URL){
+    const response = await fetch(URL);
+    const json = await response.json();
+    return json
+}
 
-    // Get the last date the dataset was updated
-    infoUpdated = new Date(json.features[0].attributes['Date']);
-    document.getElementById("infoUpdated").innerHTML = "<strong>Last Updated:</strong> " + infoUpdated.toDateString();
-
+function renderDailyData(json){
     // Get daily figures for Coronavirus in Ireland
-    dailyCases = json.features[0].attributes['ConfirmedCovidCases'];
-    dailyDeaths = json.features[0].attributes['ConfirmedCovidDeaths'];
-    dailyRecoveries = json.features[0].attributes['ConfirmedCovidRecovered'];
+    let dailyCases = json.features[0].attributes['ConfirmedCovidCases'];
+    let dailyDeaths = json.features[0].attributes['ConfirmedCovidDeaths'];
+    let dailyRecoveries = json.features[0].attributes['ConfirmedCovidRecovered'];
     
     // Update HTML elements with daily figures
     document.getElementById("dailyCases").innerHTML = dailyCases;
     document.getElementById("dailyDeaths").innerHTML = dailyDeaths;
     document.getElementById("dailyRecoveries").innerHTML = dailyRecoveries;
-    
+}
+
+function renderTotalData(json){
     // Get total figures for Coronavirus in Ireland
-    totalCases = json.features[0].attributes['TotalConfirmedCovidCases'];
-    totalDeaths = json.features[0].attributes['TotalConfirmedCovidDeaths'];
-    totalRecovered = json.features[0].attributes['TotalConfirmedCovidRecovered'];
+    let totalCases = json.features[0].attributes['TotalConfirmedCovidCases'];
+    let totalDeaths = json.features[0].attributes['TotalCovidDeaths'];
+    let totalRecovered = json.features[0].attributes['TotalCovidRecovered'];
     
     // Update HTML elements with total figures
     document.getElementById("totalCases").innerHTML = totalCases;
-    document.getElementById("totalDeaths").innerHTML = totalCases;
-    document.getElementById("totalRecovered").innerHTML = totalCases;
+    document.getElementById("totalDeaths").innerHTML = totalDeaths;
+    document.getElementById("totalRecovered").innerHTML = totalRecovered;
+}
 
+function renderAgeChart(json){
     // Get figures for Age graphs
-    aged1Cases = json.features[0].attributes['Aged1'];
-    aged1to4Cases = json.features[0].attributes['Aged1to4'];
-    aged5to14Cases = json.features[0].attributes['Aged5to14'];
-    aged15to24Cases = json.features[0].attributes['Aged15to24'];    
-    aged25to34Cases = json.features[0].attributes['Aged25to34'];    
-    aged35to44Cases = json.features[0].attributes['Aged35to44'];    
-    aged45to54Cases = json.features[0].attributes['Aged45to54']; 
-    aged55to64Cases = json.features[0].attributes['Aged55to64']; 
-    aged65upCases = json.features[0].attributes['Aged65up']; 
-
+    let aged1Cases = json.features[0].attributes['Aged1'];
+    let aged1to4Cases = json.features[0].attributes['Aged1to4'];
+    let aged5to14Cases = json.features[0].attributes['Aged5to14'];
+    let aged15to24Cases = json.features[0].attributes['Aged15to24'];    
+    let aged25to34Cases = json.features[0].attributes['Aged25to34'];    
+    let aged35to44Cases = json.features[0].attributes['Aged35to44'];    
+    let aged45to54Cases = json.features[0].attributes['Aged45to54']; 
+    let aged55to64Cases = json.features[0].attributes['Aged55to64']; 
+    let aged65upCases = json.features[0].attributes['Aged65up']; 
+    
     // https://www.chartjs.org/docs/latest/
     // Age chart	
-    const ageChartCtx = document.getElementById('ageChart').getContext('2d');
-    const ageChart = new Chart(ageChartCtx, {
+    new Chart(ageChartCtx, {
         type: 'bar',
         data: {
             labels: ['< 1', '1 to 4', '5 to 14', '15 to 24', '25 to 34', '35 to 44', '45 to 54', '55 to 64', '65 plus'],
@@ -82,15 +85,17 @@ async function getData(URL) {
             }
         }
     });
-    
+
+}
+
+function renderGenderChart(json){
     // Get figures for Gender graphs
-    maleCases = json.features[0].attributes['Male'];
-    femaleCases = json.features[0].attributes['Female'];
-    unknownCases = json.features[0].attributes['Unknown'];   
+    let maleCases = json.features[0].attributes['Male'];
+    let femaleCases = json.features[0].attributes['Female'];
+    let unknownCases = json.features[0].attributes['Unknown'];   
 
     // Gender chart	
-    var genderChartCtx = document.getElementById("genderChart");
-    var genderChart = new Chart(genderChartCtx, {
+    new Chart(genderChartCtx, {
         type: 'pie',
         data: {
             labels: ["Male", "Female", "Other"],
@@ -110,21 +115,22 @@ async function getData(URL) {
             }]
         }
     });
+}
 
+function renderTransmissionChart(json){
     // Get figures for Transmission graphs
-    communityCases = json.features[0].attributes['CommunityTransmission'];
-    closeContactCases = json.features[0].attributes['CloseContact'];
-    travelAbroadCases = json.features[0].attributes['TravelAbroad'];
-    
+    let communityCases = json.features[0].attributes['CommunityTransmission'];
+    let closeContactCases = json.features[0].attributes['CloseContact'];
+    let travelAbroadCases = json.features[0].attributes['TravelAbroad'];
+
     // Transmission Chart	
-    const transmissionChartCtx = document.getElementById('transmissionChart').getContext('2d');
-    const transmissionChart = new Chart(transmissionChartCtx, {
+    new Chart(transmissionChartCtx, {
         type: 'doughnut',
         data: {
             labels: ['Community Transmission', 'Close Contact', 'Travel Abroad'],
             datasets: [{
                 label: 'Transmission (%) Breakdown',
-                data: [communityCases, aged1to4Cases, aged5to14Cases],
+                data: [communityCases, closeContactCases, travelAbroadCases],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -138,21 +144,21 @@ async function getData(URL) {
             }]
         },
     });
+}
 
-
+function renderHospitalisationChart(json){
     // Get figures for Hospitalisation graph
-    hospitalisedAged5 = json.features[0].attributes['HospitalisedAged5'];
-    hospitalisedAged5to14 = json.features[0].attributes['HospitalisedAged5to14'];
-    hospitalisedAged15to24 = json.features[0].attributes['HospitalisedAged15to24'];   
-    hospitalisedAged25to34 = json.features[0].attributes['HospitalisedAged25to34'];   
-    hospitalisedAged35to44 = json.features[0].attributes['HospitalisedAged35to44'];   
-    hospitalisedAged45to54 = json.features[0].attributes['HospitalisedAged45to54'];
-    hospitalisedAged55to64 = json.features[0].attributes['HospitalisedAged55to64'];
-    hospitalisedAged65up = json.features[0].attributes['HospitalisedAged65up'];
-      
+    let hospitalisedAged5 = json.features[0].attributes['HospitalisedAged5'];
+    let hospitalisedAged5to14 = json.features[0].attributes['HospitalisedAged5to14'];
+    let hospitalisedAged15to24 = json.features[0].attributes['HospitalisedAged15to24'];   
+    let hospitalisedAged25to34 = json.features[0].attributes['HospitalisedAged25to34'];   
+    let hospitalisedAged35to44 = json.features[0].attributes['HospitalisedAged35to44'];   
+    let hospitalisedAged45to54 = json.features[0].attributes['HospitalisedAged45to54'];
+    let hospitalisedAged55to64 = json.features[0].attributes['HospitalisedAged55to64'];
+    let hospitalisedAged65up = json.features[0].attributes['HospitalisedAged65up'];
+    
     // Hospitalisation Chart	
-    var hospitalisationChartCtx = document.getElementById("hopitalisationChart");
-    const hospitalisationChart = new Chart(hospitalisationChartCtx, {
+    new Chart(hospitalisationChartCtx, {
         type: 'horizontalBar',
         data: {
             labels: ['< 5', '5 to 14', '15 to 24', '25 to 34', '35 to 44', '45 to 54', '55 to 64', '65 plus'],
@@ -194,6 +200,22 @@ async function getData(URL) {
     });
 }
 
+async function renderGraphs(URL) {
 
-const URL = `https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&orderByFields=date desc&outSR=4326&f=json`
-getData(URL)
+    // Get json data from API
+    const json = await getData(URL)
+
+    // Get the last date the dataset was updated
+    let infoUpdated = new Date(json.features[0].attributes['Date']);
+    document.getElementById("infoUpdated").innerHTML = "<strong>Last Updated:</strong> " + infoUpdated.toDateString();
+
+    // Render each graph
+    renderDailyData(json);
+    renderTotalData(json);
+    renderAgeChart(json);
+    renderGenderChart(json);
+    renderTransmissionChart(json);
+    renderHospitalisationChart(json);
+}
+
+renderGraphs(chartURL)

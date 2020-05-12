@@ -21,6 +21,7 @@
 * [Project Planning](#project-planning)
 * [Technology Used](#technologies-used)
 * [Testing](#testing)
+    * [### Issues](#issues)
 * [Building for Source](#building-for-source)
     * [How to Run Project Locally](#how-to-run-project-locally)
 * [Deployment](#deployment)
@@ -164,6 +165,14 @@ Ensured correct styles were applied when hovering over elements
 
 Ensured that correct figures were displayed when pulling in the data for the Coronavirus figures
 
+Renaming files cause issues with GitHub. Locally, case did not matter but it mattered on GitHub pages so some files were not being referenced properly.
+
+### Issues
+There appears to be an issue with the dataset that is used for the Graphs page as the value for the daily confirmed recoveries is the same as the total confirmed recoveries.
+
+To send a daily newsletter I would either need a backend to send the newsletter at a sopecific time each day or I would have to use a paid plan on an email marketing platform such as Mailchimp.
+
+
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
 Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
@@ -239,6 +248,8 @@ I used the following websites for reseach:
 [Used for understanding async functions](https://dev.to/johnpaulada/synchronous-fetch-with-asyncawait)
 [Get key for specific value](https://stackoverflow.com/questions/9907419/how-to-get-a-key-in-a-javascript-object-by-its-value)
 [Toggle form success and error messages](https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp)
+
+Also a special thanks to my mentor Akshat Garg for his help and advice during this project.
 
 ### Attribution
 This project makes use of the [svgMap](https://github.com/StephanWagner/svgMap) project created by [Stephan Wagner](https://github.com/StephanWagner) which creates an SVG map to display the GDP values for each country. I modified this project to display the coronavirus statistics for each county in Ireland.
