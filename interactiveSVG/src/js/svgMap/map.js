@@ -43,20 +43,23 @@ svgMap.prototype.createMap = function () {
 
     this.mapImage.appendChild(countyElement);
 
-    ['mouseenter', 'touchdown'].forEach(function (event) {
+    ['mouseenter', 'touchstart'].forEach(function (event) {
       countyElement.addEventListener(event, function () {
         countyElement.closest('g').appendChild(countyElement);
       }.bind(this));
     }.bind(this));
 
-    // TODO Tooltip events
-    // Make Country fixed on click
-    /* countyElement.addEventListener('click', function () {
-      var countyID = countyElement.getAttribute('data-id');
-      console.log(countyID);
-    });*/
-
+  
     // Tooltip events
+
+    // Add tooltip when touch is used
+    countyElement.addEventListener('touchstart', function (e) {
+      var countyID = countyElement.getAttribute('data-id');
+      this.setTooltipContent(this.getTooltipContent(countyID));
+      this.showTooltip(e);
+      this.moveTooltip(e);
+    }.bind(this));
+
     countyElement.addEventListener('mouseenter', function (e) {
       var countyID = countyElement.getAttribute('data-id');
       this.setTooltipContent(this.getTooltipContent(countyID));
@@ -67,9 +70,13 @@ svgMap.prototype.createMap = function () {
       this.moveTooltip(e);
     }.bind(this));
 
-    countyElement.addEventListener('mouseleave', function () {
-      this.hideTooltip();
+    // Hide tooltip when event is mouseleav or touchend
+    ['mouseleave', 'touchend'].forEach(function (event) {
+      countyElement.addEventListener(event, function () {
+        this.hideTooltip();
+      }.bind(this));
     }.bind(this));
+
 
   }.bind(this));
 

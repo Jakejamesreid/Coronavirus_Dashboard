@@ -30,8 +30,9 @@ svgMap.prototype.hideTooltip = function () {
 
 // Move the tooltip
 svgMap.prototype.moveTooltip = function (e) {
-  var x = e.pageX;
-  var y = e.pageY;
+  
+  var x = e.pageX || e.touches[0].pageX;
+  var y = e.pageY || e.touches[0].pageY;
   var offsetToWindow = 6;
   var offsetToPointer = 12;
   var offsetToPointerFlipped = 32;
@@ -40,28 +41,30 @@ svgMap.prototype.moveTooltip = function (e) {
   var tWidth = this.tooltip.offsetWidth;
   var tHeight = this.tooltip.offsetHeight;
 
-  // Adjust pointer when reaching window sides
-  var left = x - tWidth / 2;
-  if (left <= offsetToWindow) {
-    x = offsetToWindow + (tWidth / 2);
-    this.tooltipPointer.style.marginLeft = (left - offsetToWindow) + 'px';
-  } else if (left + tWidth >= wWidth - offsetToWindow) {
-    x = wWidth - offsetToWindow - (tWidth / 2);
-    this.tooltipPointer.style.marginLeft = ((wWidth - offsetToWindow - e.pageX - (tWidth / 2)) * -1) + 'px';
-  } else {
-    this.tooltipPointer.style.marginLeft = '0px';
-  }
+  
+    // Adjust pointer when reaching window sides
+    var left = x - tWidth / 2;
+    if (left <= offsetToWindow) {
+      x = offsetToWindow + (tWidth / 2);
+      this.tooltipPointer.style.marginLeft = (left - offsetToWindow) + 'px';
+    } else if (left + tWidth >= wWidth - offsetToWindow) {
+      x = wWidth - offsetToWindow - (tWidth / 2);
+      this.tooltipPointer.style.marginLeft = ((wWidth - offsetToWindow - e.pageX - (tWidth / 2)) * -1) + 'px';
+    } else {
+      this.tooltipPointer.style.marginLeft = '0px';
+    }
 
-  // Flip tooltip when reaching top window edge
-  var top = y - offsetToPointer - tHeight;
-  if (top <= offsetToWindow) {
-    this.tooltip.classList.add('svgMap-tooltip-flipped');
-    y += offsetToPointerFlipped;
-  } else {
-    this.tooltip.classList.remove('svgMap-tooltip-flipped');
-    y -= offsetToPointer;
-  }
+    // Flip tooltip when reaching top window edge
+    var top = y - offsetToPointer - tHeight;
+    if (top <= offsetToWindow) {
+      this.tooltip.classList.add('svgMap-tooltip-flipped');
+      y += offsetToPointerFlipped;
+    } else {
+      this.tooltip.classList.remove('svgMap-tooltip-flipped');
+      y -= offsetToPointer;
+    }
 
-  this.tooltip.style.left = x + 'px';
-  this.tooltip.style.top = y + 'px';
+    this.tooltip.style.left = x + 'px';
+    this.tooltip.style.top = y + 'px';
+  
 };
