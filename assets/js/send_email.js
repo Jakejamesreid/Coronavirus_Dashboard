@@ -10,7 +10,7 @@ function sendMail(newsletter){
         .then(function (response) {
             console.log('SUCCESS!', response.status, response.text);
             $("#newsletter").remove();
-            $("#success").html(`<p>Success! You will be contacted shortly</p>`);
+            $("#success").html(`<p>Success! You are now subscribed.</p>`);
         }, function (error) {
             console.log('FAILED...', error);
             $("#error").html(`<p>Failed! Please try again later.</p>`);
