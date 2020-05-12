@@ -167,6 +167,8 @@ Ensured that correct figures were displayed when pulling in the data for the Cor
 
 Renaming files cause issues with GitHub. Locally, case did not matter but it mattered on GitHub pages so some files were not being referenced properly.
 
+The tooltip did not get displayed when using a touch enabled device. This is a bug from the [svgMap](https://github.com/StephanWagner/svgMap) project. I have fixed this issue and also pushed a [fix](https://github.com/StephanWagner/svgMap/pulls) to the repo for the original project.
+
 ### Issues
 There appears to be an issue with the dataset that is used for the Graphs page as the value for the daily confirmed recoveries is the same as the total confirmed recoveries.
 
