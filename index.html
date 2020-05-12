@@ -16,6 +16,16 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Email.js -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("user_s3BsFUltW34pOfYkhNQ1x");
+        })();
+    </script>
+
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
         integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
@@ -83,14 +93,14 @@
                     Statistics can be analysed through graphs and an interactive map of Ireland.
                     Feel free to sign up to the daily newsletter to receive updates by email.</p>
 
-                <form id="newsletter" class="input-group" method="POST">
-                    <input type="email" class="form-control" placeholder="Your email" aria-label="Your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <form id="newsletter" class="input-group" onsubmit="return sendMail(this);">
+                    <input type="email" id="emailaddress" class="form-control" placeholder="Your email" aria-label="Your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                     <div class="input-group-append">
-                        <button id="cta" class="btn my-0 btn-dark" type="submit" onclick="showHideSuccess()">Submit</button>
+                        <button id="cta" class="btn my-0 btn-dark" type="submit">Submit</button>
                     </div>
                 </form>
-                <p id="error">Please enter a valid email</p>
-                <p id="success">You have successfully subscribed</p>
+                <div id="error"></div>
+                <div id="success"></div>
 
             </section>
             <div class="line"></div>
@@ -144,8 +154,8 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Custom JS for sidebar -->
     <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/send_email.js"></script>
     <script>
-            console.log("hello");
             function showHideSuccess() {
                 var success = document.getElementById("success");
                 if (success.style.display === "none") {

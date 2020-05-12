@@ -1,21 +1,20 @@
-function successMessage() {
-    $("#contact-form").remove();
-    $("#success-message").html(`<h2>Success! You will be contacted shortly</h2>`);
-}
+
 
 function sendMail(newsletter){
 
     var templateParams = {
-        "email": newsletter.emailaddress.value,
+        "from_email": newsletter.emailaddress.value,
     };
 
-    emailjs.send('gmail', 'jake_cv', templateParams)
+    emailjs.send('gmail', 'newsletter', templateParams)
         .then(function (response) {
             console.log('SUCCESS!', response.status, response.text);
+            $("#newsletter").remove();
+            $("#success").html(`<p>Success! You will be contacted shortly</p>`);
         }, function (error) {
             console.log('FAILED...', error);
+            $("#error").html(`<p>Failed! Please try again later.</p>`);
         });
 
-        successMessage();
     return false;
 }
