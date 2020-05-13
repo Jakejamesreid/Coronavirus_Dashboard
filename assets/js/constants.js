@@ -1,5 +1,5 @@
-export const chartURL = `https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&orderByFields=date desc&outSR=4326&f=json`
-export const mapURL = `https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/Covid19CountyStatisticsHPSCIreland/FeatureServer/0/query?where=1%3D1&outFields=CountyName,ConfirmedCovidCases,ConfirmedCovidDeaths,ConfirmedCovidRecovered,ORIGID,TimeStamp&returnGeometry=false&orderByFields=TimeStamp desc&outSR=4326&f=json`
+export const chartURL = `https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&orderByFields=date desc&outSR=4326&f=json`;
+export const mapURL = `https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/Covid19CountyStatisticsHPSCIreland/FeatureServer/0/query?where=1%3D1&outFields=CountyName,ConfirmedCovidCases,ConfirmedCovidDeaths,ConfirmedCovidRecovered,ORIGID,TimeStamp&returnGeometry=false&orderByFields=TimeStamp desc&outSR=4326&f=json`;
 
 export const values = { 
     "CN": { "cases": 0, "active": 0, "deaths": 0, "recovered": 0},

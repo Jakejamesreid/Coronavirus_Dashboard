@@ -213,6 +213,12 @@ The list below displays the current **open** issues with the project:
 
 3. The [dataset](https://opendata-geohive.hub.arcgis.com/datasets/d9be85b30d7748b5b7c09450b8aede63_0?geometry=-29.217%2C51.133%2C12.597%2C55.710&page=188) for populating the county data does not contain any data for deaths or recoveries even those these parameters are available.
 
+4. Could not use JQuery on charts.js and interactive_map.js as they the following error was thrown 
+```sh
+Uncaught SyntaxError: Unexpected token 'export'
+```
+From researching it seems like maybe JQuery is not supported by ES6
+
 ### Closed Issues
 
 The list below displays the current **closed** issues with the project:

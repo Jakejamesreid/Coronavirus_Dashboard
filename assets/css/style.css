@@ -19,14 +19,6 @@ a:focus {
     transition: all 0.5s;
 }
 
-.navbar {
-    padding: 15px 10px;
-    border: none;
-    border-radius: 0;
-    margin-bottom: 40px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.);
-}
-
 #infoUpdated{
     margin: 0%;
     text-align: end;
@@ -170,9 +162,6 @@ a.article:hover {
     width: 100%;
 }
 
-
-
-
 /* ---------------------------------------------------
     Custom CSS
 ----------------------------------------------------- */
@@ -312,9 +301,6 @@ h1,h2,h3{
     p{
         font-size: 1rem;
         text-align: center;
-    }
-    .row{
-        flex-direction: column;
     }
     #newsletter{
         width: 100%;
