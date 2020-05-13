@@ -219,6 +219,8 @@ Uncaught SyntaxError: Unexpected token 'export'
 ```
 From researching it seems like maybe JQuery is not supported by ES6
 
+5. The [dataset](https://opendata-geohive.hub.arcgis.com/datasets/d9be85b30d7748b5b7c09450b8aede63_0?geometry=-29.217%2C51.133%2C12.597%2C55.710&page=188) for populating the county data does not contain any data for Northern Ireland.
+
 ### Closed Issues
 
 The list below displays the current **closed** issues with the project:
