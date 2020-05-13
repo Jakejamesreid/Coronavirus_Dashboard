@@ -21,12 +21,12 @@
 * [Project Planning](#project-planning)
 * [Technology Used](#technologies-used)
 * [Testing](#testing)
-    * [Homepage](#homepage)
-    * [Graphs](#graphs)
-    * [Interactive SVG](#interactive-svg)
-* [### Issues](#issues)
-    * [### Open Issues](#open-issues)
-    * [### Closed Issues](#closed-issues)
+    * [Homepage Testing](#homepage-testing)
+    * [Graphs Testing](#graphs-testing)
+    * [Interactive Map Testing](#interactive-map-testing)
+* [Issues](#issues)
+    * [Open Issues](#open-issues)
+    * [Closed Issues](#closed-issues)
 * [How to Run Project Locally](#how-to-run-project-locally)
     * [Building svgMap for Source](#building-svgmap-for-source)
 * [Deployment](#deployment)
@@ -154,7 +154,7 @@ Another useful feature could be latest news updates from the Irish government, W
 
 ## Testing
 
-### Homepage
+### Homepage Testing
 Newsletter:
 1. Try to submit the empty form and verify that an error message about the required fields appears.
 2. Try to submit the form with an invalid email address and verify that a relevant error message appears.
@@ -169,7 +169,7 @@ Sidebar:
 1. Ensure that when the Dashboard link is clicked, that two additional pages, Graphs and Interactive Map, are displayed
 2. Ensure that links direct the user to the appropriate page.
 
-### Graphs
+### Graphs Testing
 
 Statistics:
 1. Ensure that the values being displayed, match the values of the [dataset](https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0/data?geometry=-7.695%2C53.288%2C-7.690%2C53.289&page=8) on the date specified next to **Last Updated**.
@@ -183,7 +183,7 @@ Sidebar:
 1. Ensure that when the Dashboard link is clicked, that the Graphs and Interactive Map links are hidden
 2. Ensure that links direct the user to the appropriate page.
 
-### Interactive Map
+### Interactive Map Testing
 
 Map:
 1. Hover over each / Hold down on each county and ensure that the tooltip is being displayed.
@@ -262,25 +262,27 @@ Steps for GitHub Pages deployment:
 
 ## Credits
 
-### Content
-The dashboards' chart data is obtained from [Irelands open data portal: CovidStatisticsProfileHPSCIrelandOpenData](https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0?geometry=-7.695%2C53.288%2C-7.690%2C53.289)
-The dashboards' interactive map data is obtained from [Irelands open data portal: Covid19CountyStatisticsHPSCIreland](https://opendata-geohive.hub.arcgis.com/datasets/d9be85b30d7748b5b7c09450b8aede63_0?geometry=-29.217%2C51.133%2C12.597%2C55.710)
+### Data
+The data for this project was gotten from the data.gov.ie website:
+- The dashboards' chart data is obtained from [Irelands open data portal: CovidStatisticsProfileHPSCIrelandOpenData](https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0?geometry=-7.695%2C53.288%2C-7.690%2C53.289)
+- The dashboards' interactive map data is obtained from [Irelands open data portal: Covid19CountyStatisticsHPSCIreland](https://opendata-geohive.hub.arcgis.com/datasets/d9be85b30d7748b5b7c09450b8aede63_0?geometry=-29.217%2C51.133%2C12.597%2C55.710)
 
 ### Media
 The photos used in this site were obtained from:
-[Favicon](https://www.iconfinder.com/iconsets/coronavirus-12?utm_campaign=Virus%20awareness&utm_medium=landing%20page&utm_source=Webflow&utm_content=Coronavirus%20by%20dDara)
-[Sidebar Image](https://www.twenty20.com/photos/78c63d85-e3c5-419b-87b4-bc137da4bd85)
+- [Favicon](https://www.iconfinder.com/iconsets/coronavirus-12?utm_campaign=Virus%20awareness&utm_medium=landing%20page&utm_source=Webflow&utm_content=Coronavirus%20by%20dDara)
+- [Sidebar Image](https://www.twenty20.com/photos/78c63d85-e3c5-419b-87b4-bc137da4bd85)
 
 ### Acknowledgements
 I received inspiration for the design of the website from:
-[General layout](https://bootstrapious.com/p/bootstrap-sidebar)
-[Layout elements](https://www.youtube.com/watch?v=dMNBuLcbOPY)
-[News Letter Sign Up](https://mdbootstrap.com/docs/jquery/navigation/footer/)
+- [General layout](https://bootstrapious.com/p/bootstrap-sidebar)
+- [Layout elements](https://www.youtube.com/watch?v=dMNBuLcbOPY)
+- [News Letter Sign Up](https://mdbootstrap.com/docs/jquery/navigation/footer/)
 
 I used the following websites for reseach:
-[Used for understanding async functions](https://dev.to/johnpaulada/synchronous-fetch-with-asyncawait)
-[Get key for specific value](https://stackoverflow.com/questions/9907419/how-to-get-a-key-in-a-javascript-object-by-its-value)
-[Toggle form success and error messages](https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp)
+- [Used for understanding async functions](https://dev.to/johnpaulada/synchronous-fetch-with-asyncawait)
+- [Get key for specific value](https://stackoverflow.com/questions/9907419/how-to-get-a-key-in-a-javascript-object-by-its-value)
+- [Toggle form success and error messages](https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp)
+- [Loader](https://www.w3schools.com/howto/howto_css_loader.asp)
 
 ### Attribution
 This project makes use of the [svgMap](https://github.com/StephanWagner/svgMap) project created by [Stephan Wagner](https://github.com/StephanWagner) which creates an SVG map to display the GDP values for each country. I modified this project to display the coronavirus statistics for each county in Ireland.

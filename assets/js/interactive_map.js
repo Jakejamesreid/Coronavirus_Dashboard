@@ -1,19 +1,5 @@
-// Make API call
-async function getData(URL){
-    const response = await fetch(URL);
-    const json = await response.json();
-    return json
-}
-
-// Swap key value pairs
-function getKeyByValue(data, value) {
-    for(key in data ){
-      if(data[key] == value){
-        return key;
-      }
-    }
-    return null;
-}
+import {mapURL, values} from './constants.js';
+import {getData, getKeyByValue} from './utils.js';
 
 // Render the interactive map with the Coronavirus statistics
 async function renderMap(URL){
@@ -27,12 +13,13 @@ async function renderMap(URL){
     document.getElementById("infoUpdated").innerHTML = "<strong>Last Updated:</strong> " + infoUpdated.toDateString();    
 
     // No option in API to get last day only so I get the last 26 results (26 as there are 26 counties in Ireland)
-    for (i=0; i<26; i++) {
-        countyName = countyData[i].attributes['CountyName'];
-        var key = getKeyByValue(svgMap.prototype.counties, countyName);
+    for (let i=0; i<26; i++) {
+        let countyName = countyData[i].attributes['CountyName'];
+        let key = getKeyByValue(svgMap.prototype.counties, countyName);
         values[key]["cases"] = countyData[i].attributes['ConfirmedCovidCases'];
     }
 
+    // Create SVG map
     new svgMap({
         targetElementID: 'svgMap',
         data: {

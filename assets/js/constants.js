@@ -1,7 +1,7 @@
-const chartURL = `https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&orderByFields=date desc&outSR=4326&f=json`
-const mapURL = `https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/Covid19CountyStatisticsHPSCIreland/FeatureServer/0/query?where=1%3D1&outFields=CountyName,ConfirmedCovidCases,ConfirmedCovidDeaths,ConfirmedCovidRecovered,ORIGID,TimeStamp&returnGeometry=false&orderByFields=TimeStamp desc&outSR=4326&f=json`
+export const chartURL = `https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&orderByFields=date desc&outSR=4326&f=json`
+export const mapURL = `https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/Covid19CountyStatisticsHPSCIreland/FeatureServer/0/query?where=1%3D1&outFields=CountyName,ConfirmedCovidCases,ConfirmedCovidDeaths,ConfirmedCovidRecovered,ORIGID,TimeStamp&returnGeometry=false&orderByFields=TimeStamp desc&outSR=4326&f=json`
 
-const values = { 
+export const values = { 
     "CN": { "cases": 0, "active": 0, "deaths": 0, "recovered": 0},
     "CW": { "cases": 0, "active": 0, "deaths": 0, "recovered": 0},
     "CE": { "cases": 0, "active": 0, "deaths": 0, "recovered": 0},
@@ -30,7 +30,7 @@ const values = {
     "WW": { "cases": 0, "active": 0, "deaths": 0, "recovered": 0}
 }
 
-const ageChartCtx = document.getElementById('ageChart');
-const genderChartCtx = document.getElementById("genderChart");
-const transmissionChartCtx = document.getElementById('transmissionChart');
-const hospitalisationChartCtx = document.getElementById("hopitalisationChart");
+export const ageChartCtx = document.getElementById('ageChart');
+export const genderChartCtx = document.getElementById("genderChart");
+export const transmissionChartCtx = document.getElementById('transmissionChart');
+export const hospitalisationChartCtx = document.getElementById("hopitalisationChart");

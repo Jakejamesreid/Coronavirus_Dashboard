@@ -21,7 +21,6 @@ a:focus {
 
 .navbar {
     padding: 15px 10px;
-    background: #fff;
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
@@ -171,20 +170,6 @@ a.article:hover {
     width: 100%;
 }
 
-#newsletter{
-    width: 50%;
-    margin-bottom: 50px;
-}
-
-#error p{
-    margin-top: 10px;
-    color: red;
-}
-
-#success p{
-    margin-top: 10px;
-    color: green;
-}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
@@ -232,10 +217,6 @@ a.article:hover {
         width: 100%;
         margin-bottom: 50px;
     }
-    #dashboardBtn{
-        margin: auto;
-        display: block;
-    }
 
 }
 
@@ -265,6 +246,38 @@ h1,h2,h3{
     width: 50%;
 }
 
+#newsletter{
+    width: 50%;
+    margin: auto auto 50px auto;
+}
+
+.loader {
+    border: 16px solid #fff;
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    margin-left: 20px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+#error p{
+    margin-top: 10px;
+    color: red;
+}
+
+#success p{
+    margin-top: 10px;
+    color: green;
+}
+
+#dashboardBtn{
+    margin: auto;
+    display: block;
+}
 /* ---------------------------------------------------
     Charts CSS
 ----------------------------------------------------- */
