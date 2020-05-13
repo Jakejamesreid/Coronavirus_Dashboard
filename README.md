@@ -1,5 +1,8 @@
-# Coronavirus Dashboard Ireland
+<div style="text-align:center;">
+    <img src="assets\images\favicon.ico"></img><br>
+</div>
 
+# Coronavirus Dashboard Ireland
 ---
 
 ## Table of Contents:
@@ -18,9 +21,14 @@
 * [Project Planning](#project-planning)
 * [Technology Used](#technologies-used)
 * [Testing](#testing)
-    * [### Issues](#issues)
-* [Building for Source](#building-for-source)
-    * [How to Run Project Locally](#how-to-run-project-locally)
+    * [Homepage](#homepage)
+    * [Graphs](#graphs)
+    * [Interactive SVG](#interactive-svg)
+* [### Issues](#issues)
+    * [### Open Issues](#open-issues)
+    * [### Closed Issues](#closed-issues)
+* [How to Run Project Locally](#how-to-run-project-locally)
+    * [Building svgMap for Source](#building-svgmap-for-source)
 * [Deployment](#deployment)
 * [Credits](#credits)
 
@@ -51,25 +59,25 @@ Since this is a dasboard I kept the colours simple so that the data would be eas
 ### Homepage
 
 <div style="text-align:center;">
-    <img src="assets\Homepage.png"></img><br>
+    <img src="assets\images\homepage.png"></img><br>
 </div>
 
 ### Graphs
 
 <div style="text-align:center;">
-    <img src="assets\Dashboard Graphs.png"></img><br>
+    <img src="assets\images\dashboard_graphs.png"></img><br>
 </div>
 
 ### Interactive SVG
 
 <div style="text-align:center;">
-    <img src="assets\Interactive SVG.png"></img><br>
+    <img src="assets\images\interactive_map.png"></img><br>
 </div>
 
 ---
 
 ## User stories
-
+Below is a list if the specific user stories for this project.
 1. As a user I want to be able to see the latest Coronavirus figures for Ireland.
 2. As a user I want to be able to see the latest Coronavirus figures for specific counties in Ireland.
 3. As a user I want to be able to see the amount of confirmed cases, deaths, recoveries in total and for today.
@@ -182,6 +190,7 @@ Map:
 2. The tooltip should display a "No Data Available" message when hovering over counties in Northern Ireland
 3. The tooltip should display the confirmed cases when hovering over counties in Republic of Ireland. There is currently no data available for 'Active', 'Deaths' and 'Recovered'
 4. When double clicking/tapping the map should zoom in.
+5. Click and drag / hold and drag to pan.
 
 Buttons:
 1. Click the '+' button and ensure that the map zooms in.
@@ -192,49 +201,32 @@ Sidebar:
 1. Ensure that when the Dashboard link is clicked, that the Graphs and Interactive Map links are hidden.
 2. Ensure that links direct the user to the appropriate page.
 
-Ensured correct styles were applied when hovering over elements
+---
 
-Ensured that correct figures were displayed when pulling in the data for the Coronavirus figures
+## Issues
 
-Renaming files cause issues with GitHub. Locally, case did not matter but it mattered on GitHub pages so some files were not being referenced properly.
+### Open Issues
+The list below displays the current **open** issues with the project:
+1. There appears to be an issue with the dataset that is used for the Graphs page as the value for the daily confirmed recoveries is the same as the total confirmed recoveries.
 
-The tooltip did not get displayed when using a touch enabled device. This is a bug from the [svgMap](https://github.com/StephanWagner/svgMap) project. I have fixed this issue and also pushed a [fix](https://github.com/StephanWagner/svgMap/pulls) to the repo for the original project.
+2. To send a daily newsletter I would either need a backend to send the newsletter at a specific time each day or I would have to use a paid plan on an email marketing platform such as Mailchimp.
 
-### Issues
+3. The [dataset](https://opendata-geohive.hub.arcgis.com/datasets/d9be85b30d7748b5b7c09450b8aede63_0?geometry=-29.217%2C51.133%2C12.597%2C55.710&page=188) for populating the county data does not contain any data for deaths or recoveries even those these parameters are available.
 
-There appears to be an issue with the dataset that is used for the Graphs page as the value for the daily confirmed recoveries is the same as the total confirmed recoveries.
+### Closed Issues
 
-To send a daily newsletter I would either need a backend to send the newsletter at a sopecific time each day or I would have to use a paid plan on an email marketing platform such as Mailchimp.
+The list below displays the current **closed** issues with the project:
+1. Renaming files cause issues with GitHub. Locally, case did not matter but it mattered on GitHub pages so some files were not being referenced properly.
 
-The [dataset](https://opendata-geohive.hub.arcgis.com/datasets/d9be85b30d7748b5b7c09450b8aede63_0?geometry=-29.217%2C51.133%2C12.597%2C55.710&page=188) for populating the county data does not contain any data for deaths or recoveries even those these parameters are available.
+2. The APIs from data.gov did not have an easy way to get the latest days data. For the Graphs data I had to make an API call which sorted the data by Date descending. This allowed me to take the 1st element from the data array to get all the data related to the latest date. For the interactive map I had to make an API call which sorted the data by TimeStamp descending. This allowed me to take the 1st 26 elements from the data array to get all the data related to the latest date for each of the 26 counties of Ireland.
 
+3. The svgMap project did was developed for a map of the globe and each country was an element. I needed to refactor this whole project so that it used a map of Ireland and each county was an element. 
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
-
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+4. The tooltip did not get displayed when using a touch enabled device. This is a bug from the [svgMap](https://github.com/StephanWagner/svgMap) project. I have fixed this issue and also pushed a [fix](https://github.com/StephanWagner/svgMap/pulls) to the repo for the original project.
 
 ---
 
-## Building for Source
-For production release:
-```sh
-$ gulp build --prod
-```
-Generating pre-built zip archives for distribution:
-```sh
-$ gulp build dist --prod
-```
-
-### How to Run Project Locally
+## How to Run Project Locally
 
 To run this project in a local environment, you first need to clone this project from GitHub:
 
@@ -242,6 +234,18 @@ To run this project in a local environment, you first need to clone this project
 2. In a command line, navigate to the directiory you want to clone the repo to and type the following command:
     ```git clone https://github.com/Jakejamesreid/Coronavirus_Dashboard.git```
 3. To run the project I use a VS Code addon called "Live Server". This allows you to launch a development local Server with a live reload feature for static & dynamic pages.
+
+### Building svgMap for Source
+If changes are made to the svgMap project, the project should be built using Gulp
+1. Navigate to the interactiveSVG folder
+2. Install Gulp with the following command:
+```sh
+$ npm install gulp
+```
+3. Build the project using:
+```sh
+$ gulp build
+```
 
 ---
 
@@ -263,7 +267,7 @@ The dashboards' chart data is obtained from [Irelands open data portal: CovidSta
 The dashboards' interactive map data is obtained from [Irelands open data portal: Covid19CountyStatisticsHPSCIreland](https://opendata-geohive.hub.arcgis.com/datasets/d9be85b30d7748b5b7c09450b8aede63_0?geometry=-29.217%2C51.133%2C12.597%2C55.710)
 
 ### Media
-- The photos used in this site were obtained from ...
+The photos used in this site were obtained from:
 [Favicon](https://www.iconfinder.com/iconsets/coronavirus-12?utm_campaign=Virus%20awareness&utm_medium=landing%20page&utm_source=Webflow&utm_content=Coronavirus%20by%20dDara)
 [Sidebar Image](https://www.twenty20.com/photos/78c63d85-e3c5-419b-87b4-bc137da4bd85)
 
