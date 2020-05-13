@@ -12,9 +12,6 @@
         * [Homepage](#homepage)
         * [Graphs](#graphs)
         * [Interactive SVG](#interactive-svg)
-* [Goals](#goals)
-    * [Project Goals](#project-goals)
-    * [User Goals](#user-goals)
 * [User Stories](#user-stories)
 * [Features](#features)
 * [Future Goals](#future-goals)
@@ -31,15 +28,14 @@
 
 ## UX (User Experience)
 
-The design of this site is pretty simple. There is a navigation menu on the left hand side to go between the different pages of the website.
-In the dashboard there is a tabbed menu to swap between the graphs and the interactive map of Ireland
+The design of this site is pretty simple. There is a sidebar that allows you to navigate through the website. This side bar can be toggled closed to allow for a better viewing experience when needed. The data for the Coronavirus statistics is split into 2 different sections. **Graphs** is used to display statistics in a graphical manner with statistics such as a breakdown of confirmed cases vs gender, hospitalisations, age, etc. **Interactive Map** is a visual representation of Ireland and its counties with a breakdown of the confirmed cases in each county. This data is displayed when hovering over the county.
 
 ### Design Choices
 
 #### Fonts
-For the statistics font I chose a sans-serif font called Segoe UI as this font is very readible at small sizes. This is important when displaying lots of data.
-For the body font I chose a sans-serif font called Poppins as this is a good font for websites with easy readability at diferent sizes.
-For the Heading font I chose Helvetica as this font pairs well with Segoe UI  
+**Statistics font** - I chose a sans-serif font called Segoe UI as this font is very readible at small sizes. This is important when displaying lots of data.
+**Body font** - I chose a sans-serif font called Poppins as this is a good font for websites with easy readability at diferent sizes.
+**Heading font** - I chose Helvetica as this font pairs well with Segoe UI.
 
 #### Colours
 Since this is a dasboard I kept the colours simple so that the data would be easy to read
@@ -70,22 +66,7 @@ Since this is a dasboard I kept the colours simple so that the data would be eas
     <img src="assets\Interactive SVG.png"></img><br>
 </div>
 
-### Contact Page
-
 ---
-
-## Goals
-
-### Project Goals
-
-This project was developed to display the Coronavirus statistics for Ireland in an easy to use dashboard allowing users to stay up to date with the latest figures. Statistics can be analysed through charts and an interactive map of Ireland. The user can also sign up to receive daily updates by email
-
-### User goals
-
-The user needs to be able to easily view the latest figures for the Coronavirus
-
----
-
 
 ## User stories
 
@@ -97,7 +78,6 @@ The user needs to be able to easily view the latest figures for the Coronavirus
 
 ---
 
-
 ## Features
 
 ### View Daily Coronavirus Figures
@@ -107,16 +87,21 @@ The user has the ability to see the new confirmed cases, deaths and recoveries f
 The user has the ability to see the total confirmed cases, deaths and recoveries since the virus first occured in Ireland.
 
 ### View County Specific Coronavirus Figures
-The user has the ability to see the total confirmed cases, deaths and recoveries for each county in Ireland.
+The user has the ability to see the total confirmed cases for each county in Ireland.
 
 ### Sign Up For Email Updates
-The user has the ability to subscribe for daily email updates to see the total new confirmed cases, deaths and recoveries for that day.
+The user has the ability to subscribe for daily email updates to see the total new confirmed cases, deaths and recoveries for that day. Note: these daily email updates will be implemented at a later date, for now the emails are just being collected.
 
 ---
 
-
 ## Future Goals
 There are many useful updates that could be implemented in this project in the future. 
+
+### Use better datasets
+The datasets that were used are very poor quality. A future update would use more accurate and regularly updated datasets
+
+### Newsletter
+The newsletter requires a backend so a future update would add a backend to this project which emails all subscribers with a daily update. Alternatively a paid plan with an email marketing platform would also work.
 
 ### Worldwide statistic
 This project could be expanded to provide worldwide statistics and a worldwide Interactive SVG map.
@@ -126,7 +111,6 @@ Another useful feature could be latest news updates from the Irish government, W
 
 ---
 
-
 ## Project Planning
 
 **Stage 1** - Implement the genral layout of the dashboard.
@@ -135,9 +119,11 @@ Another useful feature could be latest news updates from the Irish government, W
 
 **Stage 3** - Create an interactive SVG map of Ireland, which when a county is hovered over will display sample data. This data will later be replaced with the latest coronavirus figures.
 
-**Stage 4** - Use the API from data.gov to populate the charts and SVG map
+**Stage 4** - Use the data.gov APIs to populate the charts and interactive map with the data from the datasets.
 
-**Stage 5** - Test robustness of the site and optimize performance and code
+**Stage 5** - Test robustness of the site and optimize performance and code.
+
+---
 
 ## Technologies Used
 
@@ -145,21 +131,66 @@ Another useful feature could be latest news updates from the Irish government, W
 * CSS 
 * JavaScript 
 * [Bootstrap](https://getbootstrap.com/) - to help adapt for numerous input types
-* [Google Fonts](https://fonts.google.com/) - 
+* [Google Fonts](https://fonts.google.com/) - Fonts from Google
 * [VSCode](https://code.visualstudio.com/) - IDE for local development
 * [GIT](https://git-scm.com/) - Version Control
 * [GitHub](https://github.com/) - to host the repositories for this project and the live 
-* [JQuery](https://jquery.com)
-* [Popper.js](https://popper.js.org/)
-* [Chart.js](https://www.chartjs.org/)
-* [data.gov API](https://data.gov.ie/dataset?q=covid&sort=score+desc%2C+metadata_created+desc)
+* [JQuery](https://jquery.com) - Used to simplify Javascript
+* [Chart.js](https://www.chartjs.org/) - Used to display charts
+* [data.gov APIs](https://data.gov.ie/dataset?q=covid&sort=score+desc%2C+metadata_created+desc) - APIs used to access Coronavirus datasets
 * [Font Awesome](https://fontawesome.com/) - Used for Icons
 * [svgMap](https://github.com/StephanWagner/svgMap) - GitHub World Map project, modified to work for Ireland
-
+* [svg-pan-zoom](https://github.com/ariutta/svg-pan-zoom) - JavaScript library that enables panning and zooming of an SVG in an HTML document
 ---
 
 
 ## Testing
+
+### Homepage
+Newsletter:
+1. Try to submit the empty form and verify that an error message about the required fields appears.
+2. Try to submit the form with an invalid email address and verify that a relevant error message appears.
+3. Submit the form successfully and verify that a success message appears and the form disappears.
+
+Buttons:
+1. Ensure that the button under the graph section navigates the user to the graph page
+2. Ensure that the button under the interactive map section navigates the user to the interactive map page
+3. Ensure that the hamburger menu button at the top of the page, closes and opens the sidebar. On Desktop the sidebar, when opened should reduce the width of the content area but on mobile the sidebar should overlay on top of the content area.
+
+Sidebar:
+1. Ensure that when the Dashboard link is clicked, that two additional pages, Graphs and Interactive Map, are displayed
+2. Ensure that links direct the user to the appropriate page.
+
+### Graphs
+
+Statistics:
+1. Ensure that the values being displayed, match the values of the [dataset](https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0/data?geometry=-7.695%2C53.288%2C-7.690%2C53.289&page=8) on the date specified next to **Last Updated**.
+2. Ensure that Graphs Move to a single column row on mobile.
+3. Ensure that graphs are being rendered.
+
+Buttons:
+1. Ensure that the hamburger menu button at the top of the page, closes and opens the sidebar. On Desktop the sidebar, when opened should reduce the width of the content area but on mobile the sidebar should overlay on top of the content area.
+
+Sidebar:
+1. Ensure that when the Dashboard link is clicked, that the Graphs and Interactive Map links are hidden
+2. Ensure that links direct the user to the appropriate page.
+
+### Interactive Map
+
+Map:
+1. Hover over each / Hold down on each county and ensure that the tooltip is being displayed.
+2. The tooltip should display a "No Data Available" message when hovering over counties in Northern Ireland
+3. The tooltip should display the confirmed cases when hovering over counties in Republic of Ireland. There is currently no data available for 'Active', 'Deaths' and 'Recovered'
+4. When double clicking/tapping the map should zoom in.
+
+Buttons:
+1. Click the '+' button and ensure that the map zooms in.
+2. Click the '-' button and ensure that the map zooms out.
+3. Ensure that the hamburger menu button at the top of the page, closes and opens the sidebar. On Desktop the sidebar, when opened should reduce the width of the content area but on mobile the sidebar should overlay on top of the content area.
+
+Sidebar:
+1. Ensure that when the Dashboard link is clicked, that the Graphs and Interactive Map links are hidden.
+2. Ensure that links direct the user to the appropriate page.
 
 Ensured correct styles were applied when hovering over elements
 
@@ -170,9 +201,12 @@ Renaming files cause issues with GitHub. Locally, case did not matter but it mat
 The tooltip did not get displayed when using a touch enabled device. This is a bug from the [svgMap](https://github.com/StephanWagner/svgMap) project. I have fixed this issue and also pushed a [fix](https://github.com/StephanWagner/svgMap/pulls) to the repo for the original project.
 
 ### Issues
+
 There appears to be an issue with the dataset that is used for the Graphs page as the value for the daily confirmed recoveries is the same as the total confirmed recoveries.
 
 To send a daily newsletter I would either need a backend to send the newsletter at a sopecific time each day or I would have to use a paid plan on an email marketing platform such as Mailchimp.
+
+The [dataset](https://opendata-geohive.hub.arcgis.com/datasets/d9be85b30d7748b5b7c09450b8aede63_0?geometry=-29.217%2C51.133%2C12.597%2C55.710&page=188) for populating the county data does not contain any data for deaths or recoveries even those these parameters are available.
 
 
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
@@ -181,11 +215,6 @@ Whenever it is feasible, prefer to automate your tests, and if you've done so, p
 
 For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
 
 In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
 
@@ -194,7 +223,6 @@ You should also mention in this section any interesting bugs or problems you dis
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ---
-
 
 ## Building for Source
 For production release:
@@ -217,7 +245,6 @@ To run this project in a local environment, you first need to clone this project
 
 ---
 
-
 ## Deployment
 
 Steps for GitHub Pages deployment: 
@@ -229,11 +256,11 @@ Steps for GitHub Pages deployment:
  
 ---
 
-
 ## Credits
 
 ### Content
-The dashboard features maps and charts based on [Irelands open data portal](https://data.gov.ie/dataset?q=covid&sort=score+desc%2C+metadata_created+desc)
+The dashboards' chart data is obtained from [Irelands open data portal: CovidStatisticsProfileHPSCIrelandOpenData](https://opendata-geohive.hub.arcgis.com/datasets/d8eb52d56273413b84b0187a4e9117be_0?geometry=-7.695%2C53.288%2C-7.690%2C53.289)
+The dashboards' interactive map data is obtained from [Irelands open data portal: Covid19CountyStatisticsHPSCIreland](https://opendata-geohive.hub.arcgis.com/datasets/d9be85b30d7748b5b7c09450b8aede63_0?geometry=-29.217%2C51.133%2C12.597%2C55.710)
 
 ### Media
 - The photos used in this site were obtained from ...
@@ -251,8 +278,8 @@ I used the following websites for reseach:
 [Get key for specific value](https://stackoverflow.com/questions/9907419/how-to-get-a-key-in-a-javascript-object-by-its-value)
 [Toggle form success and error messages](https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp)
 
-Also a special thanks to my mentor Akshat Garg for his help and advice during this project.
-
 ### Attribution
 This project makes use of the [svgMap](https://github.com/StephanWagner/svgMap) project created by [Stephan Wagner](https://github.com/StephanWagner) which creates an SVG map to display the GDP values for each country. I modified this project to display the coronavirus statistics for each county in Ireland.
 svgMap uses [svg-pan-zoom](https://github.com/ariutta/svg-pan-zoom) by [Anders Riutta.](https://github.com/ariutta)
+
+Also a special thanks to my mentor Akshat Garg for his help and advice during this project.

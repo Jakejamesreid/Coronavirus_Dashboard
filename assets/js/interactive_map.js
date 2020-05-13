@@ -38,7 +38,7 @@ async function renderMap(URL){
         data: {
             data: {
                 cases: {
-                    name: 'Confirmed',
+                    name: 'Cases',
                     format: '{0}',
                     thousandSeparator: ',',
                     thresholdMax: 4000,
@@ -47,19 +47,23 @@ async function renderMap(URL){
                 active: {
                     name: 'Active',
                     format: '{0}',
-                    thousandSeparator: ','
+                    thousandSeparator: ',',
+                    thresholdMax: 4000,
+                    thresholdMin: 1
                 },
                 deaths: {
-                    name: 'Deceased',
+                    name: 'Deaths',
                     format: '{0}',
                     thousandSeparator: ',',
-                    thresholdMax: 1000,
+                    thresholdMax: 4000,
                     thresholdMin: 1
                 },
                 recovered: {
                     name: 'Recovered',
                     format: '{0}',
-                    thousandSeparator: ','
+                    thousandSeparator: ',',
+                    thresholdMax: 4000,
+                    thresholdMin: 1
                 }
             },
             applyData: 'Coronavirus',

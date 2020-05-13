@@ -42,7 +42,7 @@ function renderAgeChart(json){
     let aged65upCases = json.features[0].attributes['Aged65up']; 
     
     // https://www.chartjs.org/docs/latest/
-    // Age chart	
+    // Age chart
     new Chart(ageChartCtx, {
         type: 'bar',
         data: {
@@ -209,6 +209,9 @@ async function renderGraphs(URL) {
     // Get the last date the dataset was updated
     let infoUpdated = new Date(json.features[0].attributes['Date']);
     document.getElementById("infoUpdated").innerHTML = "<strong>Last Updated:</strong> " + infoUpdated.toDateString();
+
+    // Set font for charts
+    Chart.defaults.global.defaultFontFamily = "Segoe UI";
 
     // Render each graph
     renderDailyData(json);
