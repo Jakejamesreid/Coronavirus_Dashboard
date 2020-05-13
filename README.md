@@ -1,5 +1,5 @@
 <div style="text-align:center;">
-    <img src="assets\images\favicon.ico"></img><br>
+    <img src="assets\images\favicon.ico" style="width: 200px; height: 200px"></img><br>
 </div>
 
 # Coronavirus Dashboard Ireland
