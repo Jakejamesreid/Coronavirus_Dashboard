@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -29,8 +29,8 @@
             </div>
 
             <!-- Menu Items  -->
+            <p>Menu</p>
             <ul class="list-unstyled components">
-                <p>Menu</p>
                 <li class="active">
                     <a href="index.html">Home</a>
                 </li>
@@ -94,7 +94,7 @@
             <!-- Dashboard Section -->
             <section>
                 <div class="row">
-                    <div id="dashboardSctn" class="column">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
                         <h2 class="headingText">Graphs</h2>
                         <div class="pr-3">
                             <p>To see details on the latest confirmed cases, deaths and recoveries for the Coronavirus
@@ -102,21 +102,17 @@
                                 There is also confirmed cases breakdown by age, gender, transmission and
                                 hospitalisation.
                             </p>
-                            <a href='dashboard_graphs.html'>
-                                <button id="dashboardBtn" class="btn btn-dark">Click Here!</button>
-                            </a>
+                            <button onClick="location.href='dashboard_graphs.html'" class="btn btn-dark dashboardBtn">Click Here!</button>
                         </div>
                     </div>
-                    <div id="dashboardSctn" class="column">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
                         <h2 class="headingText">Interactive Map</h2>
                         <div class="pl-md-3">
                             <p>Use the button below to see a visual representation of Ireland and its counties with a
                                 breakdown of the confirmed cases in each county. This data is displayed when hovering
                                 over the county.
                             </p>
-                            <a href='interactive_map.html'>
-                                <button id="dashboardBtn" class="btn btn-dark">Click Here!</button>
-                            </a>
+                            <button onClick="location.href='dashboard_graphs.html'" class="btn btn-dark dashboardBtn">Click Here!</button>
                         </div>
                     </div>
                 </div>

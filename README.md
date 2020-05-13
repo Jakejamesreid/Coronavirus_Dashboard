@@ -51,7 +51,7 @@ Since this is a dasboard I kept the colours simple so that the data would be eas
 * Background: #f5f6fa
 * Side Bar Background: #212121
 * Side Bar Active List Element: #32373d
-* Chart Boxes: #FFF
+* Chart Boxes: #fff
 * Highlight Colour: #fff
 
 ### Wireframe Mockups

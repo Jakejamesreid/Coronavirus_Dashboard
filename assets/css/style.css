@@ -170,55 +170,7 @@ a.article:hover {
     width: 100%;
 }
 
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
 
-@media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-    #content {
-        width: 100%;
-        padding: 15px;
-    }
-    #content.active {
-        width: 100%;
-    }
-    #sidebarCollapse span {
-        display: none;
-    }
-    #sidebarCollapse{
-        margin-left:auto
-    }
-    #infoUpdated{
-        text-align: center;
-    }
-    .heading{
-        font-size: 1.5rem;
-    }
-    .subHeading{
-        font-size: 1.2rem;
-    }
-    p{
-        font-size: 1rem;
-        text-align: center;
-    }
-    .row{
-        flex-direction: column;
-    }
-    #newsletter{
-        width: 100%;
-    }
-    #dashboardSctn{
-        width: 100%;
-        margin-bottom: 50px;
-    }
-
-}
 
 
 /* ---------------------------------------------------
@@ -274,7 +226,7 @@ h1,h2,h3{
     color: green;
 }
 
-#dashboardBtn{
+.dashboardBtn{
     margin: auto;
     display: block;
 }
@@ -323,3 +275,51 @@ h1,h2,h3{
     -ms-transition: all .2s ease;
     transition: all .2s ease;
   }
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+        padding: 15px;
+    }
+    #content.active {
+        width: 100%;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+    #sidebarCollapse{
+        margin-left:auto
+    }
+    #infoUpdated{
+        text-align: center;
+    }
+    .heading{
+        font-size: 1.5rem;
+    }
+    .subHeading{
+        font-size: 1.2rem;
+    }
+    p{
+        font-size: 1rem;
+        text-align: center;
+    }
+    .row{
+        flex-direction: column;
+    }
+    #newsletter{
+        width: 100%;
+    }
+    .dashboardBtn{
+        margin-bottom: 35px;
+    }
+}
