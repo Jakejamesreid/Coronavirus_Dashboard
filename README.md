@@ -1,6 +1,7 @@
 <div style="text-align:center;">
-    <img src="assets\images\favicon.ico" style="width: 200px; height: 200px"></img><br>
+    <img src="assets\images\favicon.ico" style="width: 50px; height: 50px"></img><br>
 </div>
+![](assets\images\favicon.ico =100x100)
 
 # Coronavirus Dashboard Ireland
 ---
