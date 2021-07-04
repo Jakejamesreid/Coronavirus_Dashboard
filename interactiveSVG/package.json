@@ -26,7 +26,10 @@
     "jest": "^27.0.4"
   },
   "dependencies": {
-    "svg-pan-zoom": "^3.6.1"
+    "glob-parent": "^6.0.0",
+    "svg-pan-zoom": "^3.6.1",
+    "trim-newlines": "^4.0.2",
+    "yargs-parser": "^20.2.9"
   },
   "scripts": {
     "watch": "gulp watch",
