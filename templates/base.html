@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block meta %}
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="A dashboard for the latest Coronavirus statistics in Ireland" />
+    {% endblock %}
+
+    {% block extra_meta %}
+    {% endblock %}  
+    
+    {% block corecss %}
+        <!-- Bootstrap -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock %}
+    
+    {% block extra_css %}
+    {% endblock %}
+
+    {% block corejs %}
+        <!-- Font Awesome JS -->
+        <script src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+        <!-- Custom JS for sidebar -->
+        <script src="{% static 'js/sidebar.js' %}"></script>
+    {% endblock %}
+
+    {% block extra_js %}
+    {% endblock %}
+    
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/png">
+    <title>Coronavirus Dashboard</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        
+        <!-- Sidebar  -->
+        {% include 'includes/sidebar.html' %}
+        
+        <!-- Main Content Area -->
+        <div id="content">
+            
+            <!-- NavBar -->
+            <nav class="navbar">
+                <div class="container-fluid">
+                    
+                    <!-- Sidebar Toggle Button -->
+                    <button type="button" id="sidebarCollapse" class="btn btn-dark text-right">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                </div>
+            </nav>
+
+            {% block content %}
+            {% endblock %}
+        </div>
+        <!-- /Main Content Area -->
+    </div>
+    <!-- /Wrapper -->
+
+    {% block postloadjs %}
+    {% endblock %} 
+</body>
+
+</html>
