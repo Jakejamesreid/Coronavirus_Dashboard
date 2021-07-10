@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from Coronavirus_Dashboard.home import views
-from Coronavirus_Dashboard.graphs import views
+from home import views
+from graphs import views
 
 
 urlpatterns = [
