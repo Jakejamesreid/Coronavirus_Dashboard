@@ -1,1 +1,6 @@
-.env_python3.8
+*.pyc
+*.pyo
+*egg-info*
+.env*
+.pytest_cache
+__pycache__
