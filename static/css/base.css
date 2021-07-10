@@ -85,22 +85,14 @@ a:focus {
     z-index: -1;
 }
 
-#sidebar.active {
-    margin-left: -250px;
-}
-
 #sidebar .sidebar-header {
-    padding: 40px 0 20px 10px;
+    margin-top: 30px;
+    text-align: center;
     border-bottom: 1px solid #999;
 }
 
 #sidebar ul.components {
-    padding: 20px 0;
-}
-
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
+    margin-top: 40px;
 }
 
 #sidebar ul li a {
@@ -109,15 +101,16 @@ a:focus {
     display: block;
 }
 
-#sidebar ul li a:hover {
+#sidebar ul li a:hover,
+#sidebar ul > li.active {
     color: #212121;
     background: #fff;
 }
 
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: #fff;
-    background: #32373d;
+/*Indent sub menu */
+#sidebar ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
 }
 
 a[data-toggle="collapse"] {
@@ -132,17 +125,6 @@ a[data-toggle="collapse"] {
     transform: translateY(-50%);
 }
 
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #32373d;
-}
-
-a.article,
-a.article:hover {
-    background: #32373d !important;
-    color: #fff !important;
-}
 
 /* ---------------------------------------------------
     MAIN CONTENT AREA STYLE

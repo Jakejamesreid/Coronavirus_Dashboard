@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     # project
     'covid_dashboard',
     'home',
-    'charts',
+    'graphs',
     'map',
 ]
 

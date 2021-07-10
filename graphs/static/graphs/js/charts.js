@@ -1,5 +1,5 @@
 import {chartURL, ageChartCtx, genderChartCtx, transmissionChartCtx, hospitalisationChartCtx} from './constants.js';
-import {getData} from './utils.js';
+import {getData} from '/static/js/utils.js';
 
 function renderDailyData(json){
     // Get daily figures for Coronavirus in Ireland
