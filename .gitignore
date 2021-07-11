@@ -43,6 +43,9 @@ nbproject/*
 .pytest_cache
 __pycache__
 
-# Venv
+# Environment
 .env*
 .envrc
+
+# Static files
+staticfiles
