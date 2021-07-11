@@ -61,7 +61,7 @@ a:focus {
     background: #212121;
     color: #fff;
     transition: all 0.3s;
-    background-image: url("../../static/img/coronavirus.png");
+    background-image: url("https://res.cloudinary.com/hnoyl1xsb/image/upload/v1626042432/coronavirus_apsgqr.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;

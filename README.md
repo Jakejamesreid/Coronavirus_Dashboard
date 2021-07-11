@@ -1,5 +1,6 @@
+{% load cloudinary %}
 <div style="text-align:center;">
-    <img src="{% static 'favicon.ico' %}" width="100px" height="100px"></img><br>
+    <img src="{% cloudinary_url 'https://res.cloudinary.com/hnoyl1xsb/image/upload/v1626042366/favicon_iik8zt.png' type='fetch' %}" width="100px" height="100px"></img><br>
 </div>
 
 # Coronavirus Dashboard Ireland
@@ -59,19 +60,19 @@ Since this is a dasboard I kept the colours simple so that the data would be eas
 ### Homepage
 
 <div style="text-align:center;">
-    <img src="{% static 'homepage.png' %}"></img><br>
+    <img src="{% cloudinary_url 'https://res.cloudinary.com/hnoyl1xsb/image/upload/v1626042338/homepage_lgaxnf.png' type='fetch' %}"></img><br>
 </div>
 
 ### Graphs
 
 <div style="text-align:center;">
-    <img src="{% static 'dashboard_graphs.png' %}"></img><br>
+    <img src="{% cloudinary_url 'https://res.cloudinary.com/hnoyl1xsb/image/upload/v1626043327/dashboard_graphs_sbr7i4.png' type='fetch' %}"></img><br>
 </div>
 
 ### Interactive SVG
 
 <div style="text-align:center;">
-    <img src="{% static 'interactive_map.png' %}"></img><br>
+    <img src="{% cloudinary_url 'https://res.cloudinary.com/hnoyl1xsb/image/upload/v1626042338/interactive_map_muwdz6.png' type='fetch' %}"></img><br>
 </div>
 
 ---
