@@ -278,7 +278,7 @@ The data for this project was gotten from the data.gov.ie website:
 ### Media
 The photos used in this site were obtained from:
 - [Favicon](https://www.iconfinder.com/iconsets/coronavirus-12?utm_campaign=Virus%20awareness&utm_medium=landing%20page&utm_source=Webflow&utm_content=Coronavirus%20by%20dDara)
-- [Sidebar Image](https://www.twenty20.com/photos/78c63d85-e3c5-419b-87b4-bc137da4bd85)
+- [Sidebar Image](https://www.apsf.org/wp-content/uploads/newsletters/2020/3502/coronavirus-covid-19.png)
 
 ### Acknowledgements
 I received inspiration for the design of the website from:

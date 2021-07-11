@@ -61,7 +61,7 @@ a:focus {
     background: #212121;
     color: #fff;
     transition: all 0.3s;
-    background-image: url("../../assets/images/virus.png");
+    background-image: url("../../static/img/coronavirus.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
