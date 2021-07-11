@@ -15,7 +15,7 @@ var styles = [{
   name: 'svgMap',
   src: ['./src/scss/main.scss'],
   srcWatch: ['./src/scss/**/*.scss'],
-  dest: './dist/'
+  dest: './dist/css/'
 }];
 
 // JavaScript
@@ -28,7 +28,7 @@ var scripts = [{
     './src/js/svgMap/**/*.js',
     './src/js/umd.js'
   ],
-  dest: './dist/'
+  dest: './dist/js/'
 }];
 
 // Config tasks

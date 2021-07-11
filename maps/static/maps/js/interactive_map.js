@@ -1,5 +1,5 @@
-import {mapURL, values} from './constants.js';
-import {getData, getKeyByValue} from './utils.js';
+import {mapURL, values} from '/static/js/constants.js';
+import {getData, getKeyByValue} from '/static/js/utils.js';
 
 // Render the interactive map with the Coronavirus statistics
 async function renderMap(URL){

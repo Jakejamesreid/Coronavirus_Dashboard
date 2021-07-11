@@ -16,8 +16,8 @@
                 <li class="{% if request.resolver_match.view_name == 'graphs' %}active{% endif %}">
                     <a href="{% url 'graphs' %}">Graphs</a>
                 </li>
-                <li>
-                    <a href="interactive_map.html">Interactive Map</a>
+                <li class="{% if request.resolver_match.view_name == 'interactive_map' %}active{% endif %}">
+                    <a href="{% url 'interactive_map' %}">Interactive Map</a>
                 </li>
             </ul>
         </li>

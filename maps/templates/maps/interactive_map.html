@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link href="{% static 'css/svgMap.min.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="headingText">Coronavirus Dashboard</h1>
+
+    <div id="infoUpdated"><strong>Last Updated:</strong> Unavailable</div>
+    <div class="line"></div>
+
+    <section>
+        <h2 class="headingText">Interactive Map</h2>
+        <p>Hover over any county with a mouse or hold your finger on a county to see the latest Coronavirus
+            figures for that county.
+            To zoom use the scroll wheel of the mouse, double click / double tap or use the '+' and '-' buttons.
+            To pan click and drag / hold and drag. Please take note of the <strong>"Last Updated"</strong>
+            information at the top right of the page to see when the data was last updated.
+        </p>
+        <div id="svgMap"></div>
+    </section>
+{% endblock %}
+
+{% block postloadjs %}
+    <!-- svgMap JS -->
+    <script src="{% static 'js/svgMap.min.js' %}"></script>
+    <!-- Script constants -->
+    <script type="module" src="{% static 'js/constants.js' %}" ></script>
+    <!-- Utilities JS -->
+    <script type="module" src="{% static 'js/utils.js' %}"></script>
+    <!-- Script to populate the SVG map -->
+    <script type="module" src="{% static 'maps/js/interactive_map.js' %}"></script>
+{% endblock %}

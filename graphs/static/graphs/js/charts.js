@@ -1,4 +1,4 @@
-import {chartURL, ageChartCtx, genderChartCtx, transmissionChartCtx, hospitalisationChartCtx} from './constants.js';
+import {chartURL, ageChartCtx, genderChartCtx, transmissionChartCtx, hospitalisationChartCtx} from '/static/js/constants.js';
 import {getData} from '/static/js/utils.js';
 
 function renderDailyData(json){

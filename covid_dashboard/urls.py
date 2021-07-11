@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from home import views
 from graphs import views
+from maps import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('graphs', include('graphs.urls')),
+    path('maps', include('maps.urls')),
 ]
