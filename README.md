@@ -1,5 +1,5 @@
 <div style="text-align:center;">
-    <img src="assets\images\favicon.ico" width="100px" height="100px"></img><br>
+    <img src="{% static 'favicon.ico' %}" width="100px" height="100px"></img><br>
 </div>
 
 # Coronavirus Dashboard Ireland
@@ -59,19 +59,19 @@ Since this is a dasboard I kept the colours simple so that the data would be eas
 ### Homepage
 
 <div style="text-align:center;">
-    <img src="assets\images\homepage.png"></img><br>
+    <img src="{% static 'homepage.png' %}"></img><br>
 </div>
 
 ### Graphs
 
 <div style="text-align:center;">
-    <img src="assets\images\dashboard_graphs.png"></img><br>
+    <img src="{% static 'dashboard_graphs.png' %}"></img><br>
 </div>
 
 ### Interactive SVG
 
 <div style="text-align:center;">
-    <img src="assets\images\interactive_map.png"></img><br>
+    <img src="{% static 'interactive_map.png' %}"></img><br>
 </div>
 
 ---
