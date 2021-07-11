@@ -16,11 +16,6 @@ import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(BASE_DIR)
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-# BASE_DIR = Path(__file__).resolve().parent.parent
-# print(BASE_DIR)
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -28,8 +23,10 @@ print(BASE_DIR)
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
+DEVELOPMENT = 'DEVELOPMENT' in os.environ
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', os.environ.get('HEROKU_HOSTNAME')]
 
@@ -91,16 +88,17 @@ WSGI_APPLICATION = 'covid_dashboard.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASES = {
-    'default': dj_database_url.parse('postgres://vghbswihiqtkgd:add18c786c35088cffae65e80edd6b81929bb1d77d0d84f639703b8288a8f8ac@ec2-52-19-170-215.eu-west-1.compute.amazonaws.com:5432/d76d9ei5cllqoi')
-}
+if DEVELOPMENT:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse('postgres://vghbswihiqtkgd:add18c786c35088cffae65e80edd6b81929bb1d77d0d84f639703b8288a8f8ac@ec2-52-19-170-215.eu-west-1.compute.amazonaws.com:5432/d76d9ei5cllqoi')
+    }
 
 
 # Password validation
@@ -141,7 +139,6 @@ USE_TZ = True
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR, 'interactiveSVG/dist'),
 )
 STATIC_URL = '/static/'
 
@@ -154,9 +151,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-if 'DEVELOPMENT' in os.environ:
+if 'DEBUG' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'apex-digital-media@example.com'
+    DEFAULT_FROM_EMAIL = 'jakejamesreid@gmail.com'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
