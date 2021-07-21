@@ -44,7 +44,7 @@ nbproject/*
 __pycache__
 
 # Environment
-.env*
+.env_python3.8*
 .envrc
 
 # Static files

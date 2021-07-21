@@ -28,6 +28,6 @@ from maps import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('graphs', include('graphs.urls')),
-    path('maps', include('maps.urls')),
+    path('graphs/', include('graphs.urls')),
+    path('maps/', include('maps.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
