@@ -7,6 +7,6 @@ def home(request):
     return render(request, "home/index.html")
 
 
-def email(request):
-    send_email.delay()
+def email(request, recipient):
+    send_email.delay(recipient)
     return HttpResponse('<h1>email has been sent</h1>')
