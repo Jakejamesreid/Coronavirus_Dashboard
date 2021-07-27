@@ -1,3 +1,14 @@
 from django.contrib import admin
+from .models import Newsletter
 
-# Register your models here.
+
+class NewsletterAdmin(admin.ModelAdmin):
+
+    class Meta:
+        verbose_name_plural = "Categories"
+
+    list_display = ('email',)
+    field = ('email',)
+
+
+admin.site.register(Newsletter, NewsletterAdmin)

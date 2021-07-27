@@ -1,21 +1,24 @@
 function sendMail(newsletter){
     
     $("#loadAnim").addClass("loader");
-
-    var templateParams = {
-        "from_email": newsletter.emailaddress.value,
-    };
-
-    emailjs.send('gmail', 'newsletter', templateParams)
-        .then(function (response) {
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    $.post( "/newsletter/",
+    {
+        csrfmiddlewaretoken: csrfToken,
+        email : newsletter.emailaddress.value
+    },
+    function(data) {
+        if(data.status == 1){
             $("#newsletter").remove();
             $("#error").remove();
             $("#loadAnim").removeClass("loader");
             $("#success").html(`<p>Success! You are now subscribed.</p>`);
-        }, function (error) {
+        }
+        else{
             $("#error").html(`<p>Failed! Please try again later.</p>`);
             $("#loadAnim").removeClass("loader");
-        });
+        }
+    });
 
     return false;
 }

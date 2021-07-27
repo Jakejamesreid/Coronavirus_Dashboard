@@ -16,6 +16,7 @@
             Feel free to sign up to the daily newsletter to receive updates by email.</p>
 
         <form id="newsletter" class="input-group" onsubmit="return sendMail(this);">
+            {% csrf_token %}
             <input type="email" id="emailaddress" class="form-control" placeholder="Your email"
                 aria-label="Your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
             <div class="input-group-append">
