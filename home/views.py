@@ -1,7 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .tasks import send_email
 from .models import Newsletter
+# Standard Library
+from time import sleep
+import requests
+import json
+
+# Third Party
+from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.conf import settings
+from apscheduler.schedulers.blocking import BlockingScheduler
+
+sched = BlockingScheduler()
 
 
 def home(request):
@@ -19,6 +30,3 @@ def newsletter(request):
             return HttpResponse(status=400)
     return HttpResponse(status=200)
 
-def email(request, recipient):
-    send_email.delay(recipient)
-    return HttpResponse('<h1>email has been sent</h1>')

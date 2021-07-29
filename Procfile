@@ -1,1 +1,2 @@
-web: honcho start -f ProcfileHoncho
+web: gunicorn covid_dashboard.wsgi:application
+clock: python clock.py
