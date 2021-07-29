@@ -8,15 +8,16 @@ def home(request):
     return render(request, "home/index.html")
 
 def newsletter(request):
-    try:
-        if request.method == 'POST':
-            email = Newsletter(email=request.POST['email'])
+    if request.method == 'POST' and 'email' in request.POST:
+        email = Newsletter(email=request.POST['email'])
+        try:
             email.save()
-        email = Newsletter.objects.get(email=request.POST['email'])
-        return HttpResponse(status=200)
-    except Exception as e:
-        print(request, 'Sorry, your email cannot be added.')
-        return HttpResponse(content=e, status=400)
+            response = {
+                'status': 200,
+            }
+        except:
+            return HttpResponse(status=400)
+    return HttpResponse(status=200)
 
 def email(request, recipient):
     send_email.delay(recipient)

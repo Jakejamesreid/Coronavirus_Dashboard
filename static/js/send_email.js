@@ -2,13 +2,12 @@ function sendMail(newsletter){
     
     $("#loadAnim").addClass("loader");
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
-    $.post( "/newsletter/",
-    {
-        csrfmiddlewaretoken: csrfToken,
-        email : newsletter.emailaddress.value
-    },
-    function(data) {
-        if(data.status == 1){
+    var postData = {
+        'csrfmiddlewaretoken': csrfToken,
+        email: newsletter.emailaddress.value
+    };
+    $.post("/newsletter/", postData).done().then(function(result) {
+        if (result.error) {
             $("#newsletter").remove();
             $("#error").remove();
             $("#loadAnim").removeClass("loader");
@@ -19,6 +18,7 @@ function sendMail(newsletter){
             $("#loadAnim").removeClass("loader");
         }
     });
+
 
     return false;
 }
