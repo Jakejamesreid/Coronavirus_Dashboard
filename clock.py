@@ -9,17 +9,17 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from tzlocal import get_localzone
 
 
-tz = get_localzone()
-print(tz)
-sched = BlockingScheduler(timezone=tz)
+sched = BlockingScheduler(timezone=get_localzone())
 
-
-@sched.scheduled_job('cron', day_of_week='mon-sun', hour=20, minute=47)
+@sched.scheduled_job('cron', day_of_week='mon-sun', hour=20, minute=30)
 def scheduled_job():
+    url = 'https://services1.arcgis.com/'
+    endpoint = 'eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query'
+    query = '?where=1%3D1&outFields=*&returnGeometry=false&orderByFields=date desc&outSR=4326&f=json'
     try:
-        result = json.loads(requests.get(
-            'https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=false&orderByFields=date desc&outSR=4326&f=json'
-        ).text)
+        result = json.loads(
+            requests.get(url+endpoint+query).text
+        )
         dailyCases = result['features'][0]['attributes']['ConfirmedCovidCases']
         print(f'There are {dailyCases} today, sent to: ')
         

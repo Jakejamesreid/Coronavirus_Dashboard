@@ -30,6 +30,7 @@
     * [Closed Issues](#closed-issues)
 * [How to Run Project Locally](#how-to-run-project-locally)
     * [Building svgMap for Source](#building-svgmap-for-source)
+* [Newsletter](#newsletter)
 * [Deployment](#deployment)
 * [Credits](#credits)
 
@@ -258,6 +259,12 @@ $ gulp build
 
 ---
 
+## Newsletter
+To enable daily emails to be sent, a clock dyno was needed. The clock dyno runs clock.py which runs a cron job to send the email.
+On Herokus free tier dynos start to idle after 30mins of inactivity. To prevent this I used a service that pings your app every 30mins to prevvent idling.
+http://kaffeine.herokuapp.com/
+
+---
 ## Deployment
 
 Steps for GitHub Pages deployment: 
