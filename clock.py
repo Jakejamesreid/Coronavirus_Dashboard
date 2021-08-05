@@ -1,7 +1,9 @@
+# Project
+from home.models import Newsletter
+
 # Standard Library
 import requests
 import json
-
 # Third Party
 from django.core.mail import send_mail
 from django.conf import settings
@@ -23,11 +25,12 @@ def scheduled_job():
         dailyCases = result['features'][0]['attributes']['ConfirmedCovidCases']
         print(f'There are {dailyCases} today, sent to: ')
         
+        emails = list(Newsletter.objects.values_list('email', flat=True))
         send_mail(
             'Covid Cases', 
             f'There are {dailyCases} today', 
             settings.EMAIL_HOST_USER, 
-            ["shmaffle06@yahoo.co.uk"],
+            emails,
             fail_silently=False)
     except Exception as e:
         print(e)
