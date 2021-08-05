@@ -91,14 +91,14 @@ WSGI_APPLICATION = 'covid_dashboard.wsgi.application'
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
         }
-    }
-else:
-    DATABASES = {
-        'default': dj_database_url.parse('postgres://vghbswihiqtkgd:add18c786c35088cffae65e80edd6b81929bb1d77d0d84f639703b8288a8f8ac@ec2-52-19-170-215.eu-west-1.compute.amazonaws.com:5432/d76d9ei5cllqoi')
     }
 
 # Password validation
