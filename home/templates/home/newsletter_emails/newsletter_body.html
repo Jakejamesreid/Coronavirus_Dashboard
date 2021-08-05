@@ -1,0 +1,18 @@
+{% load inlinecss %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Coronavirus Dashboard</title>
+    </head>
+
+    <body>
+        <h1>Daily Cases</h1>
+        {{ daily_cases }}
+
+        <p>Let us know if you'd like to <a href="{{domain}}{% url 'unsubscribe' subscriber.id %}">Unsubscribe</a> from the email newsletter</p>
+    </body>
+</html>
+{% endinlinecss %}

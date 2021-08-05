@@ -4,9 +4,12 @@ from home.models import Newsletter
 # Standard Library
 import requests
 import json
+
 # Third Party
 from django.core.mail import send_mail
 from django.conf import settings
+from django.template.loader import render_to_string
+from django.contrib.sites.models import Site
 from apscheduler.schedulers.blocking import BlockingScheduler
 from tzlocal import get_localzone
 
@@ -22,16 +25,21 @@ def scheduled_job():
         result = json.loads(
             requests.get(url+endpoint+query).text
         )
-        dailyCases = result['features'][0]['attributes']['ConfirmedCovidCases']
-        print(f'There are {dailyCases} today, sent to: ')
-        
-        emails = list(Newsletter.objects.values_list('email', flat=True))
-        send_mail(
-            'Covid Cases', 
-            f'There are {dailyCases} today', 
-            settings.EMAIL_HOST_USER, 
-            emails,
-            fail_silently=False)
+        daily_cases = result['features'][0]['attributes']['ConfirmedCovidCases']
+        domain = Site.objects.get_current().domain
+        subscribers = Newsletter.objects.all()
+
+        for subscriber in subscribers:
+            body = render_to_string(
+                'home/newsletter_emails/newsletter_body.html',
+                {'daily_cases': daily_cases, 'subscriber': subscriber, 'domain': domain})
+            send_mail(
+                'Covid Cases', 
+                body, 
+                settings.EMAIL_HOST_USER, 
+                [subscriber.email],
+                html_message=body,
+                fail_silently=False)
     except Exception as e:
         print(e)
 

@@ -1,0 +1,11 @@
+body {
+    font-family: 'Helvetica', sans-serif;
+    background: #f5f6fa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    font-weight: lighter;
+    color: #32373d;
+}
