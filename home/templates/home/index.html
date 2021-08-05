@@ -15,10 +15,13 @@
             displays the statistics for each county in Ireland.
             Feel free to sign up to the daily newsletter to receive updates by email.</p>
 
-        <form id="newsletter" class="input-group" onsubmit="return sendMail(this);">
+        <form id="newsletter" class="input-group">
+
             {% csrf_token %}
-            <input type="email" id="emailaddress" class="form-control" placeholder="Your email"
-                aria-label="Your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            {% for field in form %}
+
+                {{ field }}
+            {% endfor %}
             <div class="input-group-append">
                 <button id="cta" class="btn my-0 btn-dark" type="submit">Submit</button>
             </div>
@@ -64,10 +67,38 @@
     <!-- Email.js -->
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
     <!-- Custom JS for email -->
-    <script src="{% static 'js/send_email.js' %}"></script>
     <script>
-        (function () {
-            emailjs.init("user_s3BsFUltW34pOfYkhNQ1x");
-        })();
+        $("#newsletter").submit(function (e) {
+            // preventing from page reload and default actions
+            e.preventDefault();
+
+            $("#loadAnim").addClass("loader");
+
+            // serialize the data for sending the form data.
+            var serializedData = $(this).serialize();
+
+            // make POST ajax call
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'newsletter' %}",
+                data: serializedData,
+                success: function (response) {
+                    // Reset form and display success message
+                    $("#newsletter").trigger('reset');
+                    $("#error").remove();
+                    $("#loadAnim").removeClass("loader");
+                    $("#success").html(`<p>Success! You are now subscribed.</p>`);
+                },
+                error: function (response) {
+                    // Display list of errors
+                    let errors = ""
+                    for(error in response["responseJSON"]["error"]){
+                        errors += '<p>'+response["responseJSON"]["error"][error]+'</p>'
+                    }
+                    $("#error").html(errors);
+                    $("#loadAnim").removeClass("loader"); 
+                }
+            })
+        })
     </script>
 {% endblock %}
