@@ -16,7 +16,7 @@ class NewsletterForm(forms.ModelForm):
             self.fields[name].widget.attrs.update({
                 'class': 'form-control',
             })
-            if name is "email":
+            if name in "email":
                 self.fields[name].widget.attrs['placeholder'] = "Email"
             
 

@@ -85,6 +85,10 @@ a:focus {
     z-index: -1;
 }
 
+#sidebar.active {
+    margin-left: -250px;
+}
+
 #sidebar .sidebar-header {
     margin-top: 30px;
     text-align: center;
