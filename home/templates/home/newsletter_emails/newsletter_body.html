@@ -1,5 +1,6 @@
 {% load inlinecss %}
 {% load static %}
+{% inlinecss "css/email.css" %}
 
 <!DOCTYPE html>
 <html>
@@ -10,9 +11,9 @@
 
     <body>
         <h1>Daily Cases</h1>
-        {{ daily_cases }}
+        There has been {{ daily_cases }} cases of Coronavirus today.
 
-        <p>Let us know if you'd like to <a href="{{domain}}{% url 'unsubscribe' subscriber.id %}">Unsubscribe</a> from the email newsletter</p>
+        <small>Let us know if you'd like to <a href="{{domain}}{% url 'unsubscribe' subscriber.id %}">Unsubscribe</a> from the email newsletter</small>
     </body>
 </html>
 {% endinlinecss %}

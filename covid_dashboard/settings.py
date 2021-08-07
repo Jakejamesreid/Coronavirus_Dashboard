@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'cloudinary_storage',
     'cloudinary',
+    'django_inlinecss',
 
     # project
     'covid_dashboard',
