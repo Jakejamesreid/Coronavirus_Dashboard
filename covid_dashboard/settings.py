@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'django_inlinecss',
+    'django_apscheduler',
 
     # project
     'covid_dashboard',

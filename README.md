@@ -299,6 +299,7 @@ I used the following websites for reseach:
 - [Get key for specific value](https://stackoverflow.com/questions/9907419/how-to-get-a-key-in-a-javascript-object-by-its-value)
 - [Toggle form success and error messages](https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp)
 - [Loader](https://www.w3schools.com/howto/howto_css_loader.asp)
+- [APScheduler](https://github.com/jcass77/django-apscheduler#quick-start)
 
 ### Attribution
 This project makes use of the [svgMap](https://github.com/StephanWagner/svgMap) project created by [Stephan Wagner](https://github.com/StephanWagner) which creates an SVG map to display the GDP values for each country. I modified this project to display the coronavirus statistics for each county in Ireland.
